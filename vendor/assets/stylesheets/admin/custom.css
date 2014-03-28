@@ -1,3 +1,6 @@
+.but-red a { color: #C51010; }
 .but-red .logo { background-color: #C51010 }
 .but-red .navbar { background-color: #D20026 }
 .but-red .navbar .nav a { color: white; }
+.navbar-nav > .user-menu > .dropdown-menu > li.user-body > div > a { color: #C51010; }
+.alert.alert-dismissable { border-radius: 0; margin-bottom: 0; }

@@ -571,6 +571,7 @@ body > .header .logo .icon {
   line-height: 1;
 }
 .user-panel > .info > p {
+  margin-top: 11px;
   margin-bottom: 9px;
 }
 .user-panel > .info > a {
@@ -1050,6 +1051,10 @@ body > .header .logo .icon {
 .checkbox,
 .radio {
   padding-left: 0;
+}
+
+.half-input {
+  width: 50%;
 }
 /*
     Compenent: Progress bars
@@ -1972,8 +1977,9 @@ Component: timeline
 */
 .alert {
   padding-left: 30px;
-  margin-left: 15px;
+  margin-left: 0;
   position: relative;
+  z-index: 1031;
 }
 .alert > .fa,
 .alert > .glyphicon {

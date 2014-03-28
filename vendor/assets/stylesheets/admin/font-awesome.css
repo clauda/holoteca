@@ -225,7 +225,7 @@
 .fa-th-list:before {
   content: "\f00b";
 }
-.fa-check:before {
+.fa-success:before, .fa-check:before {
   content: "\f00c";
 }
 .fa-times:before {
