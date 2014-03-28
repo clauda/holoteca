@@ -1,0 +1,48 @@
+box: wercker/ubuntu12.04-ruby2.0.0
+# Build definition
+# See the Rails section on the wercker devcenter:
+# http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
+# You will want to define your database as follows:
+services:
+    - wercker/mongodb
+# See more about services on our devcenter:
+# http://devcenter.wercker.com/articles/services/
+build:
+    # The steps that will be executed on build
+    steps:
+        # A step that executes `bundle install` command
+        - bundle-install
+        # A step that prepares the database.yml using the database in services
+        - create-file:
+            name: MongoID Config YML
+            filename: config/mongoid.yml
+            content: |-
+                test:
+                  sessions:
+                    default:
+                      database: quociente_builder
+                      hosts:
+                        - $WERCKER_MONGODB_HOST:$WERCKER_MONGODB_PORT
+                      options:
+                        read: primary
+                        max_retries: 1
+                        retry_interval: 0
+        # A custom script step, name value is used in the UI
+        # and the code value contains the command that get executed
+        - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+
+        - script:
+               name: rspec
+               code: bundle exec rake RAILS_ENV=test
+    after-steps:
+        - mies/email-notify@0.0.4:
+            from: alerts@wercker.com
+            to: claudia@holoteca.com.br
+            username: claudia@sorta.in
+            password: $EMAIL_PASS
+            host: smtp.gmail.com:587
