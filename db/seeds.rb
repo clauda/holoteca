@@ -12,3 +12,5 @@ User.create(
   password: 'senha',
   password_confirmation: 'senha',
   role: 'admin')
+
+%w(Viagens Tecnologia Entreternimento).each { |category| Category.create name: category }

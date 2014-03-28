@@ -1,0 +1,45 @@
+<section class="content-header">
+  <h1>Categorias <small>Painel</small></h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <% collection.each do |category| %>
+      <div class="col-lg-4 col-md-4 col-xs-6">
+        <div class="small-box bg-gray bg-<%= category.to_param %>">
+          <div class="inner">
+            <h3><%= category.name %></h3>
+            <p>80 Posts</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-<%= category.to_param %>"></i>
+          </div>
+          <%= link_to category.to_param, class: "small-box-footer" do %>
+            Ver no site <i class="fa fa-arrow-circle-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <%= cycle('', '', raw('</div><div class="row">')) %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="box box-danger">
+      <%= form_for([:admin, Category.new], html: { role: :form }) do |f| %>
+        <div class="box-header">
+          <h3 class="box-title">Nova Categoria</h3>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: 'Nome', class: 'form-control' %>
+          </div>
+        </div>
+        <div class="box-footer">
+          <%= f.submit "Adicionar", class: 'btn btn-default' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</section>

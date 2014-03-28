@@ -15,6 +15,6 @@ pt-BR:
               blank: 'Email requerido.'
         category:
           attributes:
-            title:
+            name:
               blank: 'Nome requerido.'
               taken: 'Nome já em uso.'
