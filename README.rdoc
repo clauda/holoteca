@@ -1,0 +1,16 @@
+## Holoteca
+
+* Ruby 2.1.1
+* Rails 4.0.4
+* Mongoid 4.0.0.alpha1
+* Rspec
+
+### Setup
+
+```
+ cp config/mongoid.yml.sample config/mongoid.yml
+ cp config/holoteca.yml.sample config/holoteca.yml
+ bundle install
+ rake db:setup
+
+```
