@@ -20,13 +20,19 @@ build:
                 test:
                   sessions:
                     default:
-                      database: quociente_builder
+                      database: holoteca_builder
                       hosts:
                         - $WERCKER_MONGODB_HOST:$WERCKER_MONGODB_PORT
                       options:
                         read: primary
                         max_retries: 1
                         retry_interval: 0
+        - create-file:
+            name: Holoteca Config YML
+            filename: config/holoteca.yml
+            content: |-
+                year: 2014
+
         # A custom script step, name value is used in the UI
         # and the code value contains the command that get executed
         - script:
