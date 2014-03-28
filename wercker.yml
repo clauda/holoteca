@@ -1,4 +1,4 @@
-box: fliplingo/ubuntu12.04-ruby2.1.0@0.0.1
+box: iori/iori@0.0.3
 # Build definition
 # See the Rails section on the wercker devcenter:
 # http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
