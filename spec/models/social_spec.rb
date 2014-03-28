@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Social do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryGirl.create :social }
+  it { expect(subject).to be_valid }
 end

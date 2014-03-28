@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryGirl.create :user }
+  it { expect(subject).to be_valid }
 end
