@@ -23,6 +23,8 @@ gem 'inherited_resources'
 gem 'unicorn'
 gem 'pry'
 gem 'dotenv-rails'
+gem 'rack-mini-profiler', require: false
+gem 'rails_12factor'
 
 group :development do
   gem 'capistrano'

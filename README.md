@@ -14,5 +14,6 @@
  cp config/holoteca.yml.sample config/holoteca.yml
  bundle install
  rake db:setup
+ foreman start
 
 ```

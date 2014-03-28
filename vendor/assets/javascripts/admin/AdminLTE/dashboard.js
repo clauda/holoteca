@@ -145,7 +145,7 @@ $(function() {
             {
                 title: 'All Day Event',
                 start: new Date(y, m, 1),
-                backgroundColor: "#3c8dbc", //light-blue 
+                backgroundColor: "#3c8dbc", //light-blue
                 borderColor: "#3c8dbc" //light-blue
             },
             {
@@ -209,6 +209,7 @@ $(function() {
 
     /* Morris.js Charts */
     // Sales chart
+    /*
     var area = new Morris.Area({
         element: 'revenue-chart',
         resize: true,
@@ -263,12 +264,12 @@ $(function() {
     });
     //Fix for charts under tabs
     $('.box ul.nav a').on('shown.bs.tab', function(e) {
-        area.redraw();
-        donut.redraw();
+        // area.redraw();
+        // donut.redraw();
     });
 
 
-    /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
+    // BOX REFRESH PLUGIN EXAMPLE (usage with morris charts)
     $("#loading-example").boxRefresh({
         source: "ajax/dashboard-boxrefresh-demo.php",
         onLoadDone: function(box) {
@@ -292,6 +293,7 @@ $(function() {
             });
         }
     });
+    */
 
     /* The todo list plugin */
     $(".todo-list").todolist({
