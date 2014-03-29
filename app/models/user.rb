@@ -27,7 +27,10 @@ class User
   field :name,              type: String
   field :role,              type: String
 
+  has_many :articles
   embeds_many :socials
+
+  index({ email: 1 }, { unique: true })
 
   def first_name
     self.name.split(' ').first
