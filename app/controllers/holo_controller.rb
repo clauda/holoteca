@@ -1,4 +1,7 @@
 class HoloController < ApplicationController
 
-  def index; end
+  def index
+    @categories = Category.all
+    @articles = Article.visible
+  end
 end

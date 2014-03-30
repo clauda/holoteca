@@ -1,9 +1,9 @@
 <ul id="mainmenu">
   <li class="menu-item current-menu-item">
-    <a href="/" class="parent">Início </a>
+    <%= link_to 'Início', root_path, class: 'parent' %>
   </li>
 
-  <% Category.all.each do |category| %>
+  <% @categories.each do |category| %>
     <li class="menu-item">
       <%= link_to category.name, '#' %>
     </li>

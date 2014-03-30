@@ -14,7 +14,7 @@ class Article
   belongs_to :author, class_name: 'User', index: true
   belongs_to :category, index: true
 
-  scope :visible, ->{ where(published: true) }
+  scope :visible, ->{ where(published: true).order(published_at: :desc) }
 
   before_save :setup
 

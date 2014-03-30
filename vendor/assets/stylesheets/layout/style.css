@@ -759,7 +759,7 @@ main {
 .block-side img,
 .posts .entry-image img {
 	transition: all 1s ease 0s;
-	width: 100%;
+	/*width: 100%;*/
 }
 .block-top > a:hover img,
 .block-side > a:hover img,

@@ -11,5 +11,6 @@ Holoteca::Application.routes.draw do
     resources :articles
   end
 
+  resources :articles, path: '', only: [ :show ]
   root to: 'holo#index'
 end
