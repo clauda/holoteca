@@ -24,7 +24,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="box box-danger">
       <%= form_for([:admin, Category.new], html: { role: :form }) do |f| %>
         <div class="box-header">
@@ -34,6 +34,11 @@
           <div class="form-group">
             <%= f.text_field :name, placeholder: 'Nome', class: 'form-control' %>
           </div>
+
+          <div class="form-group">
+            <%= f.text_field :summary, placeholder: 'Descrição', class: 'form-control' %>
+          </div>
+
         </div>
         <div class="box-footer">
           <%= f.submit "Adicionar", class: 'btn btn-default' %>

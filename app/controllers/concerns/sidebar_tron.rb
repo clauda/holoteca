@@ -6,7 +6,7 @@ module SidebarTron
   end
 
   def sidebar
-    @categories = Category.all
+    @categories = Category.all.includes(:articles)
     @articles = Article.visible
   end
 

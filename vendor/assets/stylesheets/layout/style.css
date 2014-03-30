@@ -448,7 +448,7 @@ main {
 
 .single h1.entry-title,
 .page h1.entry-title {
-	margin-bottom: 0;
+	margin-bottom: 15px;
 	font-size: 40px;
 	line-height: 1.2;
 	font-weight: 300;

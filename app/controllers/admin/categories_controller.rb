@@ -13,7 +13,7 @@ class Admin::CategoriesController < InheritedResources::Base
   protected
 
     def permitted_params
-      params.permit category: [ :name ]
+      params.permit category: [ :name, :summary ]
     end
 
 end

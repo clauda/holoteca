@@ -38,7 +38,6 @@ describe Admin::ArticlesController do
   pending "GET 'edit'" do
     let(:article){ FactoryGirl.create :article }
     it "returns http success" do
-      binding.pry
       get :edit, { id: article.permalink }
       response.should be_success
     end

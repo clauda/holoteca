@@ -1,14 +1,15 @@
 class Category
   include Mongoid::Document
-  field :name, type: String
+  include Sluggable
+  field :name,        type: String
+  field :summary,     type: String
+  field :permalink,   type: String
   validates :name, presence: true, uniqueness: { case_sensitive: true, messsage: 'Nome em uso.' }
 
   has_many :articles
 
   index({ name: 1 }, { unique: true })
 
-  def to_param
-    "#{self.name.parameterize}"
-  end
+  alias_attribute :title, :name
 
 end

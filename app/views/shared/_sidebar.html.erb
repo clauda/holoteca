@@ -25,7 +25,7 @@
 
           <div class="block-content">
             <div class="block-category">
-              <%= link_to article.category.name, '#' %>
+              <%= link_to article.category.name, category_path(article.category) %>
             </div>
             <h4 class="block-heading">
               <%= link_to article.title, article_path(article), title: article.title %>

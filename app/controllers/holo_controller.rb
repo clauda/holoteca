@@ -8,4 +8,9 @@ class HoloController < ApplicationController
     @resource.published ? render('articles/show') : render_404
   end
 
+  def category
+    @resource = Category.by_slug(params[:category_id])
+    render 'categories/show'
+  end
+
 end

@@ -27,7 +27,6 @@
 
 		/**
 		 * add masonry layout
-		 */
 		var mcontainer = $('.masonry-container');
 		mcontainer.each(function() {
 			var mc = $(this);
@@ -38,6 +37,12 @@
 				});
 			})
 		});
+		 */
+		 	var container = document.querySelector('.masonry-container');
+			var msnry = new Masonry( container, {
+			  isAnimated: true,
+			  itemSelector: 'article'
+			});
 
 		/**
 		 * add prettyPhoto call if plugin included
@@ -110,8 +115,8 @@
 
 		/**
 		 * add fitvids for video inside content and widgets
+		 * $('.entry-content, .widget').fitVids();
 		 */
-		$('.entry-content, .widget').fitVids();
 
 	});
 

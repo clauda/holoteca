@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require layout/jquery.easing.1.3
+//= require layout/masonry.pkgd.min
 //= require layout/jquery.flexslider-min
 //= require layout/jquery.fitvids
 //= require layout/jquery.mobilemenu

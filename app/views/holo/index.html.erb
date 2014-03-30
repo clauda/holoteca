@@ -10,15 +10,14 @@
 %>
 
 <div class="posts blog-masonry">
-  <div class="row masonry-container masonry">
+  <div class="row masonry-container">
 
   <% @articles.each do |article| %>
-    <article class="post col-sm-6 col-md-6 masonry-brick">
+    <article class="post col-sm-6 col-md-6">
       <div class="entry-image">
         <div class="entry-category">
           <%= link_to article.category.name, '#' %>
         </div>
-        <a href="#">
         <%= link_to article_path(article), title: article.title do %>
           <%= image_tag 'admin/user-bg.png', size: '320x282', alt: article.title %>
           <div class="overlay"><i class="fa fa-plus-circle"></i></div>

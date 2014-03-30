@@ -22,6 +22,7 @@ pt-BR:
           attributes:
             title:
               blank: 'Escolha um título bacana'
+              taken: 'Tente outro título'
             author:
               blank: 'Hey, quem é o autor?'
             category:

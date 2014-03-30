@@ -1,6 +1,7 @@
 class Article
   include Mongoid::Document
   include Taggable
+  include Sluggable
 
   field :title,       type: String
   field :body,        type: String
@@ -10,6 +11,7 @@ class Article
   field :permalink,   type: String
 
   validates :title, :body, :summary, :category, :author, presence: true
+  validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }
 
   belongs_to :author, class_name: 'User', index: true
   belongs_to :category, index: true
@@ -18,16 +20,7 @@ class Article
 
   before_save :setup
 
-  def to_param
-    "#{self.title.parameterize}"
-  end
-
-  def self.by_slug id
-    self.find_by permalink: id if id
-  end
-
   def setup
-    self.permalink = self.to_param
     self.published_at = Time.now
   end
 
