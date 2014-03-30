@@ -4,8 +4,8 @@ class Admin::ArticlesController < InheritedResources::Base
   layout 'admin'
 
   def create
-    resource.taggify params[:article][:tags]
     create!
+    resource.taggify params[:article][:tags]
   end
 
   def update

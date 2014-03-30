@@ -23,7 +23,7 @@ class Article
   end
 
   def self.by_slug id
-    self.find_by permalink: id
+    self.find_by permalink: id if id
   end
 
   def setup
