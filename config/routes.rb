@@ -11,7 +11,8 @@ Holoteca::Application.routes.draw do
     resources :articles
   end
 
-  get '/holos/:category_id', to: 'holo#category',   as: :category
-  get ':article_id',        to: 'holo#article',     as: :article
+  get '/holos/:category_id',  to: 'holo#category',   as: :category
+  get ':article_id',          to: 'holo#article',     as: :article
+
   root to: 'holo#index'
 end
