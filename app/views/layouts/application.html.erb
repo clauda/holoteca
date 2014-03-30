@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Holoteca</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="pt-BR">
+  <head>
+    <title><%= yield(:title) %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="copyright" content="Holoteca">
+    <%= yield :metatags -%>
+    <meta property="og:type" content="website" />
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= yield :stylesheets %>
+    <link rel="canonical" href="<%= url_for(only_path: true) %>">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body class='page stretched'>
 
-</body>
+    <header id="top">
+      <%= link_to image_tag('logos/logo-white-blank-holoteca.png', size: '300', alt: 'Holoteca', class: 'logo'), root_path %>
+    </header>
+
+    <nav id="mainnav">
+      <%= render 'shared/menu' %>
+    </nav>
+
+    <div id="wrapper">
+      <div class="container">
+        <main>
+          <div class='row'>
+            <div id='content' class='col-md-8'><%= yield %></div>
+            <%= render 'shared/sidebar' %>
+          </div>
+        </main>
+
+      </div>
+
+      <%= render 'shared/footer' %>
+    </div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

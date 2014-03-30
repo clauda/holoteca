@@ -32,4 +32,28 @@ module ApplicationHelper
     SOCIALS = %w(Twitter Facebook GooglePlus Skype WebSite)
   end
 
+  # Add metatags on head.
+  # Usage:
+  #   <% seo [
+  #     { property: 'description', content: nil },
+  #   ] %>
+  # on views.
+  # description metatags has default values on holoteca.yml.
+  def seo(metatags)
+    metatags.map do |meta|
+      metatag meta[:property], meta[:content], (meta[:type] || 'name')
+    end
+  end
+
+  def metatag(property, content = nil, type = 'name')
+    default = content ? content : SETTINGS[:meta][property.to_sym]
+    content_for :metatags do
+      raw "   <meta #{type}='#{property}' content='#{default}' /> \n"
+    end
+  end
+
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
 end

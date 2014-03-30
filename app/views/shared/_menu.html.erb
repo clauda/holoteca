@@ -1,0 +1,12 @@
+<ul id="mainmenu">
+  <li class="menu-item current-menu-item">
+    <a href="/" class="parent">Início </a>
+  </li>
+
+  <% Category.all.each do |category| %>
+    <li class="menu-item">
+      <%= link_to category.name, '#' %>
+    </li>
+  <% end %>
+</ul>
+
