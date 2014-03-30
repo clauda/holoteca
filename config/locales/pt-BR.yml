@@ -18,3 +18,15 @@ pt-BR:
             name:
               blank: 'Nome requerido.'
               taken: 'Nome já em uso.'
+        articles:
+          attributes:
+            title:
+              blank: 'Escolha um título bacana'
+            author:
+              blank: 'Hey, quem é o autor?'
+            category:
+              blank: 'Esqueceu da categoria, babe'
+            body:
+              blank: 'Você esqueceu do texto?'
+            summary:
+              blank: 'Você esqueceu do resumo?'

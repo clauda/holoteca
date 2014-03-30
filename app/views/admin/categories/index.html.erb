@@ -9,7 +9,7 @@
         <div class="small-box bg-gray bg-<%= category.to_param %>">
           <div class="inner">
             <h3><%= category.name %></h3>
-            <p>80 Posts</p>
+            <p><%= category.articles.size %> Artigos</p>
           </div>
           <div class="icon">
             <i class="ion ion-<%= category.to_param %>"></i>

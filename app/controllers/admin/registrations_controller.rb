@@ -1,6 +1,7 @@
 class Admin::RegistrationsController < Devise::RegistrationsController
   layout 'admin'
 
+  # TODO: fixes registrations from admin
   def create
     if resource.save
       set_flash_message :notice, :created

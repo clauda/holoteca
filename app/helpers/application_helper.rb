@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def date_for date = nil
-    date.strftime('%d/%m/%Y') unless date.nil?
+    date.strftime('%d/%m/%Y %H:%M') unless date.nil?
   end
 
   def time_for time = nil

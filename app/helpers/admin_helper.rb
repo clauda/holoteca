@@ -5,4 +5,8 @@ module AdminHelper
     "http://www.gravatar.com/avatar/#{hash}?d=mm&s=180"
   end
 
+  def label_for status
+    raw("<span class='label label-#{status ? 'success' : 'warning'}'>#{status ? 'Publicado' : 'Rascunho'}</span>")
+  end
+
 end
