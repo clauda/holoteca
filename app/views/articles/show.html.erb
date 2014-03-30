@@ -1,0 +1,86 @@
+<%
+  seo [
+    { property: 'description', content: @resource.summary },
+    { property: 'og:title', content: @resource.title, type: 'property' },
+    { property: 'og:url', content: url_for(only_path: true), type: 'property' },
+    { property: 'og:image', content: '', type: 'property' },
+    { property: 'og:description', content: @resource.summary, type: 'property' }
+  ]
+  title "#{@resource.title} / Holoteca"
+%>
+
+<article class="post">
+
+  <header class="entry-header">
+    <div class="entry-image">
+      <%= image_tag 'admin/user-bg.png', size: '720x320', alt: @resource.title %>
+    </div>
+
+    <h1 class="entry-title"><%= @resource.title %></h1>
+
+    <div class="entry-meta">
+      <span class="entry-category">
+        <%= link_to '#', title: @resource.category.name do %>
+          <i class="fa fa-folder-o"></i>
+          <%= @resource.category.name %>
+        <% end %>
+      </span>
+
+      <span class="entry-date updated">
+        <%= link_to article_path(@resource), title: @resource.title do %>
+          <i class="fa fa-clock-o"></i>
+          <time datetime="<%= @resource.published_at %>"><%= date_for @resource.published_at %></time>
+        <% end %>
+      </span>
+
+      <span class="vcard">
+        <%= link_to '', class: 'url fn', title: @resource.title do %>
+          <i class="fa fa-user"></i>
+          <span><%= @resource.author.name %></span>
+        <% end %>
+      </span>
+    </div>
+  </header>
+
+  <div class="entry-content">
+    <%= raw @resource.body %>
+  </div>
+
+  <footer class="entry-footer">
+    <div class="tags">
+      <i class="fa fa-tags"></i>
+      <% @resource.tags.each do |tag| %>
+        <%= link_to tag.name, '#', rel: 'tag' %>
+      <% end %>
+    </div>
+
+    <nav class="next-prev clearfix">
+      <div class="nav-previous">
+        <div>Anterior</div>
+        <%= link_to 'On the Road to Dreams', '#', rel: 'prev' %>
+      </div>
+
+      <div class="nav-next">
+        <div>Próximo</div>
+        <%= link_to 'Winter Night City', '#', rel: 'next' %>
+      </div>
+    </nav>
+
+  </footer>
+
+</article>
+
+<div class="author-info">
+  <div class="author-avatar">
+    <%= image_tag gravatar_url(@resource.author.email), class: 'avatar avatar-50 photo', alt: @resource.author.name, size: '50x50' %>
+  </div>
+
+  <div class="author-link">
+    <h4><%= link_to @resource.author.name, '#', rel: 'author external', title: @resource.author.name %></h4>
+    <%= link_to '#', rel: 'author', title: @resource.author.name do %>
+      Todos os posts de <%= @resource.author.name %>      <span class="meta-nav">→</span>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+
+</div>

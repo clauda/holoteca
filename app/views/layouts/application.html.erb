@@ -7,7 +7,7 @@
     <meta name="copyright" content="Holoteca">
     <%= yield :metatags -%>
     <meta property="og:type" content="website" />
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= yield :stylesheets %>
     <link rel="canonical" href="<%= url_for(only_path: true) %>">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -17,7 +17,7 @@
   <body class='page stretched'>
 
     <header id="top">
-      <%= link_to image_tag('logos/logo-white-blank-holoteca.png', size: '300', alt: 'Holoteca', class: 'logo'), root_path %>
+      <%= link_to image_tag('logos/logo-white-blank-holoteca.png', size: '300x57', alt: 'Holoteca', class: 'logo'), root_path %>
     </header>
 
     <nav id="mainnav">
@@ -38,6 +38,6 @@
       <%= render 'shared/footer' %>
     </div>
 
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>

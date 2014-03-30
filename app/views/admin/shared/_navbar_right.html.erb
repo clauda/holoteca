@@ -8,7 +8,7 @@
 
       <ul class="dropdown-menu">
         <li class="user-header">
-          <%= image_tag gravatar_url(current_user.email), class: 'img-circle', alt: 'Claudia' %>
+          <%= image_tag gravatar_url(current_user.email), class: 'img-circle', alt: current_user.name %>
           <p><%= current_user.name %>
             <small><%= current_user.role %></small>
           </p>
