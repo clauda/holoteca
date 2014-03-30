@@ -30,6 +30,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :tags, 'Tags' %>
+        <%= f.text_field :tags, placeholder: 'Adicionar Tag', class: 'form-control', data: { role: 'tagsinput' }, value: (resource.tags.empty? ? '' : resource.taggable) %>
+      </div>
+
+      <div class="form-group">
         <label>
           <%= f.check_box :published, class: 'flat-red' %>
           Publicar?

@@ -1,5 +1,7 @@
 class Article
   include Mongoid::Document
+  include Taggable
+
   field :title,       type: String
   field :body,        type: String
   field :published,   type: Mongoid::Boolean, default: false

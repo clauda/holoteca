@@ -13,6 +13,7 @@
 //= require admin/plugins/daterangepicker/daterangepicker
 //= require admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min
 //= require admin/plugins/iCheck/icheck.min
+//= require admin/plugins/bootstrap-tagsinput.min
 //= require admin/AdminLTE/app.js
 //= require admin/AdminLTE/dashboard.js
 //

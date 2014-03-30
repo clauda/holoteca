@@ -35,9 +35,13 @@
             <i class="fa fa-calendar"></i> <%= date_for resource.published_at %>
           </h5>
           <h1><%= resource.title %></h1>
-          <h3><blockquote><%= resource.summary %></blockquote><br /></h3>
+          <h3><blockquote><%= raw resource.summary %></blockquote><br /></h3>
 
           <%= raw resource.body %>
+
+          <br />
+          <h4><% resource.tags.each do |tag| %> <span class="label label-primary"><%= tag.name %></span> <% end %></h4>
+          <br />
 
         </div>
       </div>
