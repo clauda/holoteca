@@ -12,6 +12,8 @@ class Article
   belongs_to :author, class_name: 'User', index: true
   belongs_to :category, index: true
 
+  scope :visible, ->{ where(published: true) }
+
   before_save :setup
 
   def to_param

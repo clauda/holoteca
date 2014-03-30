@@ -4,4 +4,20 @@
 
 <section class="content">
 
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-xs-6">
+      <div class="small-box bg-red">
+        <div class="inner">
+          <h3><%= @articles.size %></h3>
+          <p>Artigos Publicados</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-pie-graph"></i>
+        </div>
+        <%= link_to admin_articles_path, class: 'small-box-footer' do %>
+          Ver Todos <i class="fa fa-arrow-circle-right"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section>

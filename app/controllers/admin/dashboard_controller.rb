@@ -3,5 +3,6 @@ class Admin::DashboardController < ApplicationController
   layout 'admin'
 
   def index
+    @articles = Article.visible
   end
 end
