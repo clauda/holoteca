@@ -18,7 +18,8 @@ describe Admin::ArticlesController do
       author: user,
       title: 'Holo Bizarro',
       body: 'Lorem Ipsum',
-      summary: 'Bacon Ipsum'
+      summary: 'Bacon Ipsum',
+      tags: 'lorem,ipsum'
     } }
 
     it 'should be created' do
