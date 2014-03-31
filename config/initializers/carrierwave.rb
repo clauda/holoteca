@@ -1,20 +1,21 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
-    :aws_access_key_id      => HOLO['aws_access_key_id'],                     # required
-    :aws_secret_access_key  => HOLO['aws_secret_access_key'],                        # required
-    :region                 => 'eu-west-1',                  # optional, defaults to 'us-east-1'
+    :aws_access_key_id      => ENV['AWS_KEY_ID'],                     # required
+    :aws_secret_access_key  => ENV['AWS_SECRET'],                        # required
+    :region                 => 'sa-east-1',                  # optional, defaults to 'us-east-1'
     :host                   => 's3.example.com',             # optional, defaults to nil
     :endpoint               => 'https://s3.example.com:8080' # optional, defaults to nil
   }
-  config.fog_directory  = HOLO['aws_bucket']                     # required
 
-  if Rails.env.development?
-    config.storage              = :grid_fs
-    config.grid_fs_access_url   = '/uploads/archives'
-    # config.grid_fs_database = Mongoid.database.name
-    # config.grid_fs_host = Mongoid.config.master.connection.host
+  if Rails.env.production?
+    config.fog_directory  =  'holozone.staging'                    # required
+  else
+    config.fog_directory  =  'holozone'                   # required
   end
+
+  config.storage              = :grid_fs
+  config.grid_fs_access_url   = '/uploads/archives'
 
   config.fog_public     = false                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}

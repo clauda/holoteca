@@ -9,9 +9,12 @@
 
 ### Setup
 
+Dependecies rmagikc, libpng, pngquant, jpegoptim, optpng.
+
+Some environment variables.
+
 ```
  cp config/mongoid.yml.sample config/mongoid.yml
- cp config/holoteca.yml.sample config/holoteca.yml
  bundle install
  rake db:setup
  foreman start
