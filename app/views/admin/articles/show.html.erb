@@ -11,9 +11,9 @@
             <div class="box-tools">
               <%= label_for resource.published %>
               <div class="btn-group pull-right">
-                <%= link_to 'Todos', admin_articles_path, class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-caret-left"></i> Todos'), admin_articles_path, class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-plus"></i>'), new_admin_article_path, class: 'btn btn-sm btn-default' %>
-                <%= link_to raw('<i class="fa fa-file-text"></i>'), new_admin_article_path, class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-edit"></i>'), edit_admin_article_path(resource), class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, confirm: 'Tem certeza?' %>
               </div>
@@ -31,8 +31,8 @@
 
         <div class="box-body">
           <h5 class='pull-right'>
-            <i class="fa fa-folder-o"></i> <%= resource.category.name %>
-            <i class="fa fa-user"></i> <%= resource.author.name %>
+            <i class="fa fa-folder-o"></i> <%= resource.category.try :name %>
+            <i class="fa fa-user"></i> <%= resource.author.try :name %>
             <i class="fa fa-calendar"></i> <%= date_for resource.published_at %>
           </h5>
           <h1><%= resource.title %></h1>

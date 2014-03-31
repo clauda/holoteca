@@ -866,7 +866,7 @@ body > .header .logo .icon {
   margin-left: -10px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
-  height: 175px;
+  min-height: 175px;
   padding: 10px;
   background: #C51010;
   text-align: center;

@@ -25,6 +25,16 @@
           </div>
 
           <div class="form-group">
+            <label for="user_about">Sobre</label>
+            <%= f.text_field :about, placeholder: 'Breve descrição', class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <label for="user_permalink">Permalink</label>
+            <%= f.text_field :permalink, placeholder: 'Permalink', class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
             <%= f.label :password, 'Nova senha' %> <i>(deixe em branco se você não quiser alterar)</i>
             <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
           </div>
@@ -46,19 +56,34 @@
         </div>
 
         <div class="box-body">
-          <%#= f.fields_for :socials do |s| %>
-            <% collection_for[:socials].each do |social| %>
-            <div class='form-group'>
-              <label><%= social %></label>
-              <%#= s.hidden_field :network, value: social %>
-              <div class="input-group input-group-lg half-input">
-                <div class="input-group-btn">
-                  <%#= s.text_field :url, class: 'form-control' %>
-                </div>
-              </div>
+          <div class='form-group'>
+            <div class="input-group">
+              <span class="input-group-addon">twitter</span>
+              <%= f.text_field :twitter, placeholder: 'http://twitter.com/username', class: 'form-control' %>
             </div>
-            <% end %>
-          <%# end %>
+          </div>
+
+          <div class='form-group'>
+            <div class="input-group">
+              <span class="input-group-addon">facebook</span>
+              <%= f.text_field :facebook, placeholder: 'http://facebook.com/username', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <div class="input-group">
+              <span class="input-group-addon">google plus</span>
+              <%= f.text_field :gplus, placeholder: 'http://plus.google.com/+UserName', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <div class="input-group">
+              <span class="input-group-addon">website</span>
+              <%= f.text_field :site, placeholder: 'http://you.com', class: 'form-control' %>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

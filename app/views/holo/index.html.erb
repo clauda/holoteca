@@ -10,13 +10,13 @@
 %>
 
 <div class="posts blog-masonry">
-  <div class="row masonry-container">
+  <div class="row">
 
   <% @articles.each do |article| %>
     <article class="post col-sm-6 col-md-6">
       <div class="entry-image">
         <div class="entry-category">
-          <%= link_to article.category.name, category_path(article.category) %>
+          <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
         </div>
         <%= link_to article_path(article), title: article.title do %>
           <%= image_tag 'admin/user-bg.png', size: '320x282', alt: article.title %>
@@ -33,6 +33,12 @@
             <%= link_to article_path(article), title: article.title do %>
               <i class="fa fa-clock-o"></i>
               <time datetime="<%= article.published_at %>"><%= date_for article.published_at %></time>
+            <% end %>
+          </span>
+          <span class="vcard">
+            <%= link_to author_path(article.author), class: 'url fn', title: article.author.name do %>
+              <i class="fa fa-user"></i>
+              <span><%= article.author.name %></span>
             <% end %>
           </span>
         </div>

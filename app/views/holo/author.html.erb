@@ -1,0 +1,20 @@
+<%
+  seo [
+    { property: 'description', content: @resource.name },
+    { property: 'og:title', content: @resource.about, type: 'property' },
+    { property: 'og:url', content: url_for(only_path: true), type: 'property' },
+    { property: 'og:image', content: gravatar_url(@resource.email), type: 'property' },
+    { property: 'og:description', content: @resource.about, type: 'property' }
+  ]
+  title "#{@resource.name} / Holoteca"
+%>
+
+<header class="archive-header">
+  <%= render partial: 'author', locals: { resource: @resource } %>
+</header>
+
+<div class='posts blog-small'>
+  <% @resource.articles.visible.each do |article| %>
+    <%= render partial: 'article', locals: { article: article } %>
+  <% end %>
+</div>

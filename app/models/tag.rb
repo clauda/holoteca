@@ -10,7 +10,4 @@ class Tag
   has_and_belongs_to_many :articles, index: true
 
   index({ name: 1 }, { unique: true })
-
-  alias_attribute :title, :name
-
 end

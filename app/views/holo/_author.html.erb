@@ -1,0 +1,59 @@
+<div class="author-info">
+  <div class="author-avatar">
+    <%= image_tag gravatar_url(resource.email), class: 'avatar photo', alt: resource.name, size: '100x100' %>
+  </div>
+
+  <div class="author-description author-link">
+    <h2><%= resource.name %></h2>
+
+    <%= link_to author_path(resource), rel: 'author', title: resource.name do %>
+      Todos os posts de <%= resource.name %>      <span class="meta-nav">→</span>
+    <% end %>
+
+    <p><%= resource.about %></p>
+  </div>
+
+  <% if resource.site %>
+  <div class="author-website">
+    <i class="fa fa-external-link"></i>
+    <%= link_to resource.site, url_for(resource.site), target: '_blank' %>
+  </div>
+  <% end %>
+
+  <div class="widget_g7_social">
+    <ul class="horizontal circle">
+
+      <% unless resource.facebook.blank? %>
+      <li class="social-facebook">
+        <%= link_to url_for(resource.facebook), target: '_blank', title: 'Facebook' do %>
+          <span class="social-box">
+            <i class="fa fa-facebook"></i>
+          </span>
+        <% end %>
+      </li>
+      <% end %>
+
+      <% unless resource.gplus.blank? %>
+      <li class="social-google">
+        <%= link_to url_for(resource.gplus), target: '_blank', title: 'Google Plus' do %>
+          <span class="social-box">
+            <i class="fa fa-google-plus"></i>
+          </span>
+        <% end %>
+      </li>
+      <% end %>
+
+      <% unless resource.twitter.blank? %>
+      <li class="social-twitter">
+        <%= link_to url_for(resource.twitter), target: '_blank', title: 'Twitter' do %>
+          <span class="social-box">
+            <i class="fa fa-twitter"></i>
+          </span>
+        <% end %>
+      </li>
+      <% end %>
+
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div>

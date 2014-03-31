@@ -12,6 +12,7 @@ Holoteca::Application.routes.draw do
   end
 
   get '/tag/:id',    to: 'holo#tag',      as: :tag
+  get '/autor/:id',  to: 'holo#author',   as: :author
   get '/holos/:id',  to: 'holo#category', as: :category
   get ':article_id', to: 'holo#article',  as: :article
 

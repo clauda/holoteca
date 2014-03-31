@@ -20,7 +20,7 @@
 		 */
 		if ($.fn.mobileMenu) {
 			$('#mainmenu').mobileMenu({
-				defaultText: 'g7.navigate_text',
+				defaultText: 'Navegue por aqui',
 				className: 'mainmenu'
 			});
 		}
@@ -39,10 +39,12 @@
 		});
 		 */
 		 	var container = document.querySelector('.masonry-container');
-			var msnry = new Masonry( container, {
-			  isAnimated: true,
-			  itemSelector: 'article'
-			});
+		 	if(container){
+				var msnry = new Masonry( container, {
+				  isAnimated: true,
+				  itemSelector: 'article'
+				});
+			};
 
 		/**
 		 * add prettyPhoto call if plugin included

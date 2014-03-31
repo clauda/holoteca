@@ -20,7 +20,7 @@ module Sluggable
   end
 
   def to_param
-    "#{self.title.parameterize}"
+    "#{self.name.parameterize}"
   end
 
   def slug_me

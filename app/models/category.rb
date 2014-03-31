@@ -9,7 +9,4 @@ class Category
   has_many :articles
 
   index({ name: 1 }, { unique: true })
-
-  alias_attribute :title, :name
-
 end

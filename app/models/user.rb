@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Sluggable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,14 +27,21 @@ class User
 
   ## Custom
   field :name,              type: String
+  field :about,             type: String
   field :role,              type: String
+  field :permalink,         type: String
+
+  field :twitter,         type: String
+  field :facebook,        type: String
+  field :gplus,           type: String
+  field :site,            type: String
 
   has_many :articles
-  embeds_many :socials
 
   index({ email: 1 }, { unique: true })
 
   def first_name
     self.name.split(' ').first
   end
+
 end

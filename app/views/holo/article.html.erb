@@ -9,7 +9,7 @@
   title "#{@resource.title} / Holoteca"
 %>
 
-<article class="post">
+<article class="post single">
 
   <header class="entry-header">
     <div class="entry-image">
@@ -19,12 +19,14 @@
     <h1 class="entry-title"><%= @resource.title %></h1>
 
     <div class="entry-meta">
+      <% if @resource.category %>
       <span class="entry-category">
         <%= link_to category_path(@resource.category), title: @resource.category.name do %>
           <i class="fa fa-folder-o"></i>
           <%= @resource.category.name %>
         <% end %>
       </span>
+      <% end %>
 
       <span class="entry-date updated">
         <%= link_to article_path(@resource), title: @resource.title do %>
@@ -34,7 +36,7 @@
       </span>
 
       <span class="vcard">
-        <%= link_to '', class: 'url fn', title: @resource.title do %>
+        <%= link_to author_path(@resource.author), class: 'url fn', title: @resource.author.name do %>
           <i class="fa fa-user"></i>
           <span><%= @resource.author.name %></span>
         <% end %>
@@ -73,17 +75,4 @@
 
 </article>
 
-<div class="author-info">
-  <div class="author-avatar">
-    <%= image_tag gravatar_url(@resource.author.email), class: 'avatar avatar-50 photo', alt: @resource.author.name, size: '50x50' %>
-  </div>
-
-  <div class="author-link">
-    <h4><%= link_to @resource.author.name, '#', rel: 'author external', title: @resource.author.name %></h4>
-    <%= link_to '#', rel: 'author', title: @resource.author.name do %>
-      Todos os posts de <%= @resource.author.name %>      <span class="meta-nav">→</span>
-    <% end %>
-  </div>
-  <div class="clear"></div>
-
-</div>
+<%= render partial: 'author', locals: { resource: @resource.author } %>

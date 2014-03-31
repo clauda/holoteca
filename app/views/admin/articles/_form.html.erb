@@ -1,7 +1,17 @@
 <div class="box box-danger">
   <%= form_for([:admin, resource], html: { role: :form }) do |f| %>
     <div class="box-header">
-      <h3 class="box-title">Novo Artigo</h3>
+      <h3 class="box-title">Novo Artigo <%= label_for resource.published unless resource.new_record? %></h3>
+      <div class="box-tools">
+        <div class="btn-group pull-right">
+          <%= link_to raw('<i class="fa fa-caret-left"></i> Todos'), admin_articles_path, class: 'btn btn-sm btn-default' %>
+
+          <% unless resource.new_record? %>
+          <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
+          <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, confirm: 'Tem certeza?' %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="box-body pad">
       <div class='row'>

@@ -1,6 +1,6 @@
 <ul id="mainmenu">
   <li class="menu-item current-menu-item">
-    <%= link_to 'Início', root_path, class: 'parent' %>
+    <%= link_to 'Início', root_path, class: 'parent', 'data-no-turbolink' => true %>
   </li>
 
   <% @categories.each do |category| %>

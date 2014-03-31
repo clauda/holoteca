@@ -2,7 +2,7 @@
 
   <div class="entry-image">
     <div class="entry-category">
-      <%= link_to article.category.name, category_path(article.category), title: article.category.name %>
+      <% if article.category %><%= link_to article.category.name, category_path(article.category), title: article.category.name %><% end %>
     </div>
     <%= link_to article_path(article), title: article.title do %>
       <%= image_tag 'admin/user-bg.png', size: '200x150', alt: article.title %>
@@ -25,7 +25,7 @@
       </span>
 
       <span class="vcard">
-        <%= link_to '#', title: article.title, class: 'url fn' do %>
+        <%= link_to author_path(article.author), title: article.author.name, class: 'url fn' do %>
           <i class="fa fa-user"></i>
           <span><%= article.author.name %></span>
         <% end %>

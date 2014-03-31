@@ -14,7 +14,7 @@
           <div class="icon">
             <i class="ion ion-<%= category.to_param %>"></i>
           </div>
-          <%= link_to category.to_param, class: "small-box-footer" do %>
+          <%= link_to category_path(category), class: "small-box-footer" do %>
             Ver no site <i class="fa fa-arrow-circle-right"></i>
           <% end %>
         </div>

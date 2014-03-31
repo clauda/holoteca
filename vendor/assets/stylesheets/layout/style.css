@@ -275,7 +275,7 @@ main {
 }
 #mainmenu > li {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin: 10px 10px 10px 0;
 }
 #mainmenu li a {
 	display: block;
@@ -459,7 +459,7 @@ main {
 }
 .single .entry-content,
 .page .entry-content {
-	margin: 30px 0;
+	margin-top: 30px;
 }
 .single .entry-category a:before {
 	display: inline-block;
@@ -556,12 +556,12 @@ main {
 }
 .author-description h2 {
 	margin-bottom: 5px;
-	font-size: 15px;
+	font-size: 22px;
 	line-height: 20px;
 	font-weight: bold;
 }
 .author-website {
-	margin-top: 12px;
+	margin-top: 25px;
 }
 .author-website a {
 	font-size: 13px;
@@ -1085,6 +1085,7 @@ article.page > .entry-footer {
 }
 .author-avatar .avatar,
 .widget_g7_comments .avatar {
+	border-radius: 50px;
 	float: left;
 }
 .widget_g7_comments li {

@@ -20,12 +20,13 @@ module ApplicationHelper
     time.strftime("%H:%M")
   end
 
-  def age_for date
-    "( #{((Time.now - date.to_time)/(60*60*24*365)).floor} anos )" if date
-  end
-
   def hidden_if boo
     raw("style='display:none'") if boo
+  end
+
+  def gravatar_url email
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}?d=mm&s=180"
   end
 
   class Enum
@@ -46,7 +47,7 @@ module ApplicationHelper
   end
 
   def metatag(property, content = nil, type = 'name')
-    default = content ? content : SETTINGS[:meta][property.to_sym]
+    default = content ? content : HOLO['meta'][property]
     content_for :metatags do
       raw "   <meta #{type}='#{property}' content='#{default}' /> \n"
     end
