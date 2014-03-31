@@ -15,7 +15,6 @@ Some environment variables.
 
 
 ```
- cp config/mongoid.yml.sample config/mongoid.yml
  bundle install
  rake db:setup
  foreman start
