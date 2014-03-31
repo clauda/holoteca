@@ -29,6 +29,10 @@ module ApplicationHelper
     "http://www.gravatar.com/avatar/#{hash}?d=mm&s=180"
   end
 
+  def cover url = nil
+    url.nil? ? image_path('default320.png') : url
+  end
+
   class Enum
     SOCIALS = %w(Twitter Facebook GooglePlus Skype WebSite)
   end

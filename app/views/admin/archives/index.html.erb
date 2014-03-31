@@ -1,0 +1,40 @@
+<section class="content-header">
+  <h1>Recursos <small>Imagens</small></h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="box box-danger">
+        <div class="box-header">
+          <h3 class="box-title">Imagens</h3>
+        </div>
+
+        <%= form_for [:admin, Archive.new], html: { multipart:  true } do |f| %>
+          <div class="box-body pad">
+            <div class="form-group">
+              <label>Upload Imagem</label>
+              <%= f.file_field :image %>
+              <%= f.hidden_field :image_cache %>
+            </div>
+          </div>
+          <div class="box-footer">
+            <%= f.submit "Adicionar", class: 'btn btn-default' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% collection.each do |archive| %>
+      <div class="col-xs-6 col-md-2">
+        <%= link_to archive.image.url, class: 'thumbnail' do %>
+          <img src="<%= archive.image.url %>" class='img-responsive' width="" />
+        <% end %>
+      </div>
+      <%= cycle('', '', '', '', '', raw('</div><div class="row">')) %>
+    <% end %>
+  </div>
+
+</section>

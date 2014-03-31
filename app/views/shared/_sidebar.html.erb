@@ -18,7 +18,7 @@
 
           <div class="block-side">
             <%= link_to article_path(article), title: article.title do %>
-              <%= image_tag 'admin/user-bg.png', size: '70x70', alt: article.title %>
+              <%= image_tag cover(article.cover_url), size: '70x70', alt: article.title %>
               <div class="overlay"><i class="fa fa-plus-circle"></i></div>
             <% end %>
           </div>

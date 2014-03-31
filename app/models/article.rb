@@ -9,6 +9,7 @@ class Article
   field :published_at, type: Time, default: ->{ Time.now }
   field :summary,     type: String
   field :permalink,   type: String
+  field :cover_url,   type: String
 
   validates :title, :body, :summary, :category, :author, presence: true
   validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }

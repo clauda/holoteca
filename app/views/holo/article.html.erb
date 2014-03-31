@@ -3,7 +3,7 @@
     { property: 'description', content: @resource.summary },
     { property: 'og:title', content: @resource.title, type: 'property' },
     { property: 'og:url', content: url_for(only_path: true), type: 'property' },
-    { property: 'og:image', content: '', type: 'property' },
+    { property: 'og:image', content: @resource.cover_url, type: 'property' },
     { property: 'og:description', content: @resource.summary, type: 'property' }
   ]
   title "#{@resource.title} / Holoteca"
@@ -13,7 +13,7 @@
 
   <header class="entry-header">
     <div class="entry-image">
-      <%= image_tag 'admin/user-bg.png', size: '720x320', alt: @resource.title %>
+      <% if @resource.cover_url %><%= image_tag @resource.cover_url, size: '720x320', alt: @resource.title %><% end %>
     </div>
 
     <h1 class="entry-title"><%= @resource.title %></h1>

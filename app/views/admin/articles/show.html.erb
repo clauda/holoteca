@@ -35,6 +35,7 @@
             <i class="fa fa-user"></i> <%= resource.author.try :name %>
             <i class="fa fa-calendar"></i> <%= date_for resource.published_at %>
           </h5>
+          <%= image_tag resource.cover_url, class: 'cover' %>
           <h1><%= resource.title %></h1>
           <h3><blockquote><%= raw resource.summary %></blockquote><br /></h3>
 

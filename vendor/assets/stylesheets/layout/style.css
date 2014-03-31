@@ -460,6 +460,7 @@ main {
 .single .entry-content,
 .page .entry-content {
 	margin-top: 30px;
+	min-height: 68px;
 }
 .single .entry-category a:before {
 	display: inline-block;
@@ -711,12 +712,16 @@ main {
 .posts .entry-image {
 	border-bottom: 5px solid #eee;
 	transition: all 1s ease 0s;
+	height: 190px;
+	overflow: hidden;
 }
 .block-top:hover,
 .block-1 .block-side:hover,
 .posts .entry-image:hover {
 	border-color: #e74c3c;
 }
+.blog-small .entry-image { height: 140px; }
+
 .entry-image .entry-category {
 	position: absolute;
 	top: 0;
@@ -842,6 +847,8 @@ h4.block-heading {
 .block-side {
 	margin-right: 15px;
 	float: left;
+	max-height: 40px;
+	overflow: hidden;
 }
 .block-excerpt,
 .posts .entry-content {

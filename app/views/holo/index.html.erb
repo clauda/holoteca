@@ -19,7 +19,7 @@
           <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
         </div>
         <%= link_to article_path(article), title: article.title do %>
-          <%= image_tag 'admin/user-bg.png', size: '320x282', alt: article.title %>
+          <%= image_tag cover(article.cover_url), size: '320x282', alt: article.title %>
           <div class="overlay"><i class="fa fa-plus-circle"></i></div>
         <% end %>
       </div>

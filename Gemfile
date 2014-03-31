@@ -17,6 +17,14 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'inherited_resources'
 
+gem 'carrierwave' #, git: 'git://github.com/jnicklas/carrierwave.git'
+gem 'carrierwave-mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git', require: 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+gem 'mini_magick', git: 'git://github.com/probablycorey/mini_magick.git'
+gem 'piet'
+gem 'piet-binary'
+gem 'fog'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
