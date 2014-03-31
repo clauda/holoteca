@@ -13,26 +13,6 @@ build:
         # A step that executes `bundle install` command
         - bundle-install
         # A step that prepares the database.yml using the database in services
-        - create-file:
-            name: MongoID Config YML
-            filename: config/mongoid.yml
-            content: |-
-                test:
-                  sessions:
-                    default:
-                      database: holoteca_builder
-                      hosts:
-                        - $WERCKER_MONGODB_HOST:$WERCKER_MONGODB_PORT
-                      options:
-                        read: primary
-                        max_retries: 1
-                        retry_interval: 0
-        - create-file:
-            name: Holoteca Config YML
-            filename: config/holoteca.yml
-            content: |-
-                year: 2014
-
         # A custom script step, name value is used in the UI
         # and the code value contains the command that get executed
         - script:
