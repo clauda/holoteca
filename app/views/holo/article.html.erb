@@ -13,7 +13,7 @@
 
   <header class="entry-header">
     <div class="entry-image">
-      <% if @resource.cover_url %><%= image_tag @resource.cover_url, size: '720x320', alt: @resource.title %><% end %>
+      <% if @resource.cover_url %><%= image_tag @resource.cover_url, alt: @resource.title %><% end %>
     </div>
 
     <h1 class="entry-title"><%= @resource.title %></h1>

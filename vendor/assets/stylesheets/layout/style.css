@@ -453,6 +453,8 @@ main {
 	line-height: 1.2;
 	font-weight: 300;
 }
+.single header .entry-image { height: 320px; overflow: hidden; vertical-align: middle; }
+.single header .entry-image img { width: 720px; height: auto; vertical-align: middle; }
 .single header .entry-image,
 .page header .entry-image {
 	margin-bottom: 20px;
