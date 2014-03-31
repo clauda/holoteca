@@ -2,7 +2,7 @@
 a { color: #C51010; }
 #mainmenu > li:hover > a, #mainmenu ul { background-color: #C51010 }
 #mainmenu > li.current-menu-item > a, #mainmenu > li.current_page_item > a, #mainmenu > li.current-menu-ancestor > a, #mainmenu > li.current_page_ancestor > a { background-color: #C51010; }
-.block-title a, .block-title span { background-color: #C51010; }
+.block-title a, .block-title span { background-color: #e14d43; }
 .block-more > a:hover { color: #C51010; }
 .entry-image .entry-category a { background-color: #C51010; }
 .block-heading > a:hover,

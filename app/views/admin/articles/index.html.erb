@@ -41,6 +41,7 @@
                 <td><%= label_for article.published %></td>
                 <td>
                   <div class="btn-group">
+                    <%= link_to raw('<i class="fa fa-external-link"> Ver no site </i>'), article_path(article), class: 'btn btn-sm btn-default' %>
                     <%= link_to raw('<i class="fa fa-edit"> Editar </i>'), edit_admin_article_path(article), class: 'btn btn-sm btn-default' %>
                     <%= link_to raw('<i class="fa fa-times"> Remover</i>'), admin_article_path(article), class: 'btn btn-sm btn-default', method: :delete, confirm: 'Tem certeza?' %>
                   </div>

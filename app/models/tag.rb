@@ -1,9 +1,16 @@
 class Tag
   include Mongoid::Document
-  field :name, type: String
-  has_and_belongs_to_many :articles
+  include Sluggable
 
-  def to_param
-    "#{self.name.parameterize}"
-  end
+  field :name, type: String
+  field :permalink, type: String
+
+  validates :name, :permalink, uniqueness: true
+
+  has_and_belongs_to_many :articles, index: true
+
+  index({ name: 1 }, { unique: true })
+
+  alias_attribute :title, :name
+
 end

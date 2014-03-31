@@ -47,10 +47,13 @@
   </div>
 
   <footer class="entry-footer">
-    <div class="tags">
-      <i class="fa fa-tags"></i>
+    <div>
       <% @resource.tags.each do |tag| %>
-        <%= link_to tag.name, '#', rel: 'tag' %>
+        <span class="block-title">
+        <%= link_to tag_path(tag), rel: 'tag' do %>
+          <%= tag.name %>    <i class="fa fa-angle-right"></i>
+        <% end %>
+        </span>
       <% end %>
     </div>
 

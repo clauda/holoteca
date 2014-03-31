@@ -9,7 +9,11 @@ module Sluggable
     base.class_eval do
 
       def self.by_slug id
-        find_by permalink: id if id
+        begin
+          find_by(permalink: id) if id
+        rescue Mongoid::Errors::DocumentNotFound
+          return nil
+        end
       end
 
     end

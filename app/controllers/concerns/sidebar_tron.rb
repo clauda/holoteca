@@ -5,9 +5,15 @@ module SidebarTron
     before_filter :sidebar
   end
 
-  def sidebar
-    @categories = Category.all.includes(:articles)
-    @articles = Article.visible
-  end
+  protected
+
+    def sidebar
+      @categories = Category.all.includes(:articles)
+      @articles = Article.visible
+    end
+
+    def raise_404
+      render_404 if @resource.nil?
+    end
 
 end

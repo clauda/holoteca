@@ -22,7 +22,16 @@ describe HoloController do
     let(:category){ FactoryGirl.create :category }
 
     it 'should be successful' do
-      get :category, { category_id: category.permalink }
+      get :category, { id: category.permalink }
+      expect(response).to be_success
+    end
+  end
+
+  describe "GET 'tag'" do
+    let(:tag){ FactoryGirl.create :tag }
+
+    it 'should be successful' do
+      get :tag, { id: tag.permalink }
       expect(response).to be_success
     end
   end
