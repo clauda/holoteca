@@ -13,6 +13,7 @@ Dependecies rmagikc, libpng, pngquant, jpegoptim, optpng.
 
 Some environment variables.
 
+
 ```
  cp config/mongoid.yml.sample config/mongoid.yml
  bundle install
