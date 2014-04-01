@@ -14,7 +14,7 @@
       <h2 class="widgettitle"><span>Você também vai querer saber...</span></h2>
       <ul>
         <% @articles.each do |article| %>
-        <li class="cat-7">
+        <li class="<%= article.category.to_param %>">
 
           <div class="block-side">
             <%= link_to article_path(article), title: article.title do %>

@@ -1,3 +1,12 @@
+$(document).ready(function(){
+	var $page = $('#mainmenu').data('page');
+	if (!!$page){
+		var $item = $('.menu-item[data-item='+$page+']');
+		if (!!$item){ $item.addClass('current-menu-item'); }
+		else { $('.menu-item').first().addClass('current-menu-item'); }
+	} else { $('.menu-item').first().addClass('current-menu-item'); }
+});
+
 (function ($) {
 
 	"use strict";
@@ -10,7 +19,6 @@
 				$(this).text(moment(this.getAttribute('datetime'), "YYYY-MM-DD hh:mm:ss").fromNow());
 			}
 		});
-
 
 		/**
 		 * submenu indicator & fade animation
