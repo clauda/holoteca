@@ -8,6 +8,8 @@
 $(function() {
     "use strict";
 
+    // $("#category_color").colorpicker();
+
     //Make the dashboard widgets sortable Using jquery UI
     // $(".connectedSortable").sortable({
     //     placeholder: "sort-highlight",

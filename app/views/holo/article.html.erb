@@ -22,7 +22,6 @@
       <% if @resource.category %>
       <span class="entry-category">
         <%= link_to category_path(@resource.category), title: @resource.category.name do %>
-          <i class="fa fa-folder-o"></i>
           <%= @resource.category.name %>
         <% end %>
       </span>
