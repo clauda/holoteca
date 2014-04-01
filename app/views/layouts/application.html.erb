@@ -15,6 +15,7 @@
   </head>
 
   <body class='page stretched'>
+    <%= render 'shared/fb_script' unless Rails.env.development? %>
 
     <header id="top">
       <%= link_to image_tag('logos/logo-white-blank-holoteca.png', size: '300x57', alt: 'Holoteca', class: 'logo'), root_path %>
