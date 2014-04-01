@@ -20,6 +20,11 @@ module ApplicationHelper
     time.strftime("%H:%M")
   end
 
+  def moment_for date
+    # "2013-02-08 09:30:26"
+    date.strftime('%Y-%m-%d %H:%M:%S') unless date.nil?
+  end
+
   def hidden_if boo
     raw("style='display:none'") if boo
   end

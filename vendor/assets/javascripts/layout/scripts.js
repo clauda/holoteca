@@ -4,6 +4,14 @@
 
 	$(function() {
 
+		$('time').each(function(){
+			moment.lang('pt-br');
+			if (!!this.getAttribute('datetime').length) {
+				$(this).text(moment(this.getAttribute('datetime'), "YYYY-MM-DD hh:mm:ss").fromNow());
+			}
+		});
+
+
 		/**
 		 * submenu indicator & fade animation
 		 */

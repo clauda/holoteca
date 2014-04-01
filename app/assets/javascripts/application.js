@@ -9,6 +9,7 @@
 //= require layout/jquery.mobilemenu
 //= require layout/jquery.prettyPhoto
 //= require layout/retina-1.1.0.min
+//= require layout/moment-with-langs.min
 //= require layout/scripts
 //
 Turbolinks.enableTransitionCache();

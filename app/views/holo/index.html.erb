@@ -32,7 +32,7 @@
           <span class="entry-date updated">
             <%= link_to article_path(article), title: article.title do %>
               <i class="fa fa-clock-o"></i>
-              <time datetime="<%= article.published_at %>"><%= date_for article.published_at %></time>
+              <time datetime="<%= moment_for(article.published_at) %>"><%= date_for article.published_at %></time>
             <% end %>
           </span>
           <span class="vcard">
