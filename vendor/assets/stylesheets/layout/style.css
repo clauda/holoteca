@@ -482,8 +482,8 @@ main {
 	font-size: 16px;
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;
-	padding: 20px 0;
-	text-align: center;
+	padding: 20px 0 8px;
+	/*text-align: center;*/
 	margin-top: 40px;
 }
 .next-prev > div {
@@ -518,6 +518,7 @@ main {
 }
 .single .entry-footer {
 	margin-top: 40px;
+	margin-bottom: 60px;
 }
 
 .tags {
@@ -530,7 +531,7 @@ main {
 	color: #999;
 }
 .author-info {
-	margin-top: 60px;
+	/*margin-top: 60px;*/
 }
 .author-info .avatar {
 	margin-right: 15px;
@@ -1056,6 +1057,7 @@ article.page > .entry-footer {
 #wrapper .widget:last-child {
 	margin-bottom: 0;
 }
+.fb-like { float: left }
 .widget ul > li {
 	padding: 5px 0;
 }
