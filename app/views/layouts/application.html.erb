@@ -12,11 +12,10 @@
     <link rel="canonical" href="<%= url_for(only_path: true) %>">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
     <%= csrf_meta_tags %>
-    <%= render 'shared/shareholic' %>
   </head>
 
   <body class='page stretched'>
-    <%= render 'shared/fb_script' unless Rails.env.development? %>
+    <div id='fb-root'></div>
 
     <header id="top">
       <%= link_to image_tag('logos/logo-white-blank-holoteca.png', size: '300x57', alt: 'Holoteca', class: 'logo'), root_path %>
@@ -41,5 +40,6 @@
     </div>
 
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= render 'shared/shareholic' %>
   </body>
 </html>

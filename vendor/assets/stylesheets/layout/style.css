@@ -1057,6 +1057,7 @@ article.page > .entry-footer {
 #wrapper .widget:last-child {
 	margin-bottom: 0;
 }
+.fb { min-height: 200px; }
 .fb-like { float: left }
 .widget ul > li {
 	padding: 5px 0;

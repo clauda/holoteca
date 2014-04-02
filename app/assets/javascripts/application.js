@@ -11,5 +11,11 @@
 //= require layout/retina-1.1.0.min
 //= require layout/moment-with-langs.min
 //= require layout/scripts
+// Do not load on development mode
+// require components/facebook
 //
 Turbolinks.enableTransitionCache();
+
+$(document).on('page:change', function(){
+  Shareaholic.init_apps();
+});
