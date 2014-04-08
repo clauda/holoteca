@@ -1,2 +1,3 @@
-rails-server: bundle exec rails server thin
-mail-catcher: mailcatcher
+web: bundle exec rails server
+redis: redis-server
+mailcatcher: mailcatcher

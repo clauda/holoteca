@@ -20,11 +20,11 @@ module Sluggable
   end
 
   def to_param
-    "#{self.name.parameterize}"
+    self.permalink
   end
 
   def slug_me
-    self.permalink = self.to_param
+    self.permalink = self.name.parameterize
   end
 
 end

@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	var $page = $('#mainmenu').data('page');
-	if (!!$page){
-		var $item = $('.menu-item[data-item='+$page+']');
-		if (!!$item){ $item.addClass('current-menu-item'); }
-		else { $('.menu-item').first().addClass('current-menu-item'); }
-	} else { $('.menu-item').first().addClass('current-menu-item'); }
+	// var $page = $('#mainmenu').data('page');
+	// if (!!$page){
+	// 	var $item = $('.menu-item[data-item='+$page+']');
+	// 	if (!!$item){ $item.addClass('current-menu-item'); }
+	// 	else { $('.menu-item').first().addClass('current-menu-item'); }
+	// } else { $('.menu-item').first().addClass('current-menu-item'); }
 });
 
 (function ($) {

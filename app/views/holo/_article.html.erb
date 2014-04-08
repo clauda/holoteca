@@ -1,3 +1,4 @@
+<% cache([article, "card"]) do %>
 <article class="post <%= article.category.to_param %>">
 
   <div class="entry-image">
@@ -38,3 +39,4 @@
   <div class="clear"></div>
 
 </article>
+<% end %>

@@ -19,7 +19,7 @@ body {
 	background: #eee;
 	color: #333;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.7;
 	overflow-x: hidden;
 }
@@ -241,7 +241,7 @@ main {
 }
 #bottom {
 	color: #888;
-	background-color: #fff;
+	background-color: #eee;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-size: 13px;
@@ -1067,7 +1067,8 @@ article.page > .entry-footer {
 	padding-top: 0;
 }
 .widget_g7_posts ul > li {
-	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+	padding: 14px 10px 8px;
 }
 .widget li > a {
 	color: #555;

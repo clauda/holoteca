@@ -4,6 +4,7 @@ class Admin::CategoriesController < InheritedResources::Base
   layout 'admin'
 
   def create
+    expire_fragment :top_menu
     create! do |success, failure|
       success.html { redirect_to admin_categories_path, notice: 'Works, babe!' }
       failure.html { redirect_to admin_categories_path, alert: 'Inválido!' }

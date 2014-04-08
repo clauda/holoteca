@@ -2,9 +2,8 @@
   seo [
     { property: 'description', content: '' },
     { property: 'og:title', content: 'Holoteca', type: 'property' },
-    { property: 'og:url', content: url_for(only_path: true), type: 'property' },
-    { property: 'og:image', content: '', type: 'property' },
-    { property: 'og:description', content: '', type: 'property' }
+    { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
+    { property: 'og:description', content: 'Holoteca', type: 'property' }
   ]
   title 'Holoteca'
 %>
@@ -13,6 +12,7 @@
   <div class="row">
 
   <% @articles.each do |article| %>
+    <% cache([article, "card"]) do %>
     <article class="post col-sm-6 col-md-6">
       <div class="entry-image">
         <div class="entry-category">
@@ -45,6 +45,7 @@
         <div class="entry-content"><%= raw article.summary %></div>
       </div>
     </article>
+    <% end %>
   <% end %>
 
   </div>

@@ -1,12 +1,14 @@
-<ul id="mainmenu" data-page="<%= params[:id] %>">
-  <li class="menu-item">
-    <%= link_to 'Início', root_path, class: 'parent', 'data-no-turbolink' => true %>
-  </li>
-
-  <% @categories.each do |category| %>
-    <li class="menu-item" data-item="<%= category.to_param %>">
-      <%= link_to category.name, category_path(category) %>
+<% cache(:top_menu) do %>
+  <ul id="mainmenu">
+    <li class="menu-item">
+      <%= link_to 'Início', root_path, class: 'parent', 'data-no-turbolink' => true %>
     </li>
-  <% end %>
-</ul>
+
+    <% @categories.each do |category| %>
+      <li class="menu-item">
+        <%= link_to category.name, category_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 

@@ -15,7 +15,7 @@
                 <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-plus"></i>'), new_admin_article_path, class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-edit"></i>'), edit_admin_article_path(resource), class: 'btn btn-sm btn-default' %>
-                <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, confirm: 'Tem certeza?' %>
+                <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, dat: { confirm: 'Tem certeza?' } %>
               </div>
               <!--
               TODO: search

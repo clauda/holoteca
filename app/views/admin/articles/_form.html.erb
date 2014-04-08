@@ -8,7 +8,7 @@
 
           <% unless resource.new_record? %>
           <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
-          <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, confirm: 'Tem certeza?' %>
+          <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, data: { confirm: 'Tem certeza?' } %>
           <% end %>
         </div>
       </div>
@@ -47,7 +47,7 @@
       <% if resource.permalink %>
       <div class="form-group">
         <%= f.label :permalink %> <i>
-        <%= f.text_field :permalink, class: 'form-control', required: true %>
+        <%= f.text_field :permalink, class: 'form-control', disabled: true %>
       </div>
       <% end %>
 
@@ -64,7 +64,7 @@
       </div>
     </div>
     <div class="box-footer">
-      <%= f.submit "Adicionar", class: 'btn btn-default' %>
+      <%= f.submit "Salvar", class: 'btn btn-default' %>
     </div>
   <% end %>
 </div>

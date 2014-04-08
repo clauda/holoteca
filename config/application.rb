@@ -18,6 +18,14 @@ module Holoteca
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/app/sweepers)
+    config.autoload_paths += %W(#{config.root}/assets/fonts)
+
+    config.cache_store = :redis_store, ENV['REDISCLOUD_URL'], { expires_in: 90.minutes }
+    config.static_cache_control = 'public, max-age=2592000'
+    config.action_dispatch.rack_cache = true
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
