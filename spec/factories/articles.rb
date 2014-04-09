@@ -7,6 +7,7 @@ FactoryGirl.define do
     updated_at Time.now
     summary 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, incidunt, maiores, dolorem molestiae repellendus sapiente consequatur voluptatibus veniam soluta sit dicta a tempora ex aut quasi quidem quia iusto quisquam!'
     permalink 'lorem-ipsum'
+    cover_url nil
     association :author, factory: :user
     category
   end

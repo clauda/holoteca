@@ -4,7 +4,7 @@ box: iori/iori@0.0.3
 # http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
 # You will want to define your database as follows:
 services:
-    - wercker/mongodb
+    - wercker/mongodb@1.0.1
 # See more about services on our devcenter:
 # http://devcenter.wercker.com/articles/services/
 build:

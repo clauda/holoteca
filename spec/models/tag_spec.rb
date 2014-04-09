@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Tag do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryGirl.create :tag }
+  it { expect(subject).to be_valid }
 end

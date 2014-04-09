@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :archive do
-    image ''
+    image 'picture.png'
   end
 end

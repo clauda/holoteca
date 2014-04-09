@@ -35,11 +35,12 @@ describe Admin::ArticlesController do
     end
   end
 
-  pending "GET 'edit'" do
+  describe "GET 'edit'" do
     let(:article){ FactoryGirl.create :article }
-    it "returns http success" do
+
+    pending "returns http success" do
       get :edit, { id: article.permalink }
-      response.should be_success
+      expect(response).to be_success
     end
   end
 

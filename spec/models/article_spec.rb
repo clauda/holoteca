@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Article do
-  subject { FactoryGirl.create :article }
+  subject { FactoryGirl.create :article, published: true }
   it { expect(subject).to be_valid }
 
-  pending('.by_slug') { expect(Article.by_slug('lorem-ipsum')).to eq(subject) }
+  pending('.by_slug') { expect(Article.by_slug('lorem-ipsum').title).to eq(subject.title) }
 
   it('#to_param') { expect(subject.to_param).to eq('lorem-ipsum') }
 

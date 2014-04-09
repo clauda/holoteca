@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Archive do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryGirl.create :archive }
+  pending { expect(subject).to be_valid }
 end
