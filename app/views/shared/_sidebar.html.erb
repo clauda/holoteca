@@ -16,6 +16,7 @@
       <h2 class="widgettitle"><span>Últimas</span></h2>
       <ul>
         <% @lastest.each do |article| %>
+          <% cache([article, "thumb"]) do %>
           <li class="<%= article.category.to_param %>">
             <div class="block-content">
               <div class="block-category">
@@ -27,6 +28,7 @@
               <div class="clear"></div>
             </div>
           </li>
+          <% end %>
         <% end %>
       </ul>
     </li>

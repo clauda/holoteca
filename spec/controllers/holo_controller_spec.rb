@@ -3,6 +3,8 @@ require 'spec_helper'
 describe HoloController do
 
   describe "GET 'index'" do
+    let(:article){ FactoryGirl.create :article }
+    # before { binding.pry }
     it 'should be successful' do
       get :index
       expect(response).to be_success
@@ -10,8 +12,6 @@ describe HoloController do
   end
 
   pending "GET 'article'" do
-    let(:article){ FactoryGirl.create :article }
-
     it 'should be successful' do
       get :article, { article_id: article.permalink }
       expect(response).to be_success
