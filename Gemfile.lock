@@ -204,6 +204,10 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
+    oboe (2.6.3.0)
+      json
+    oboe-heroku (0.9.11.0)
+      oboe (>= 2.6.3.0)
     omniauth (1.2.1)
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
@@ -394,6 +398,7 @@ DEPENDENCIES
   mongoid!
   mongoid-grid_fs!
   mongoid-rspec
+  oboe-heroku
   omniauth
   omniauth-facebook
   piet

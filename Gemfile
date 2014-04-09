@@ -68,3 +68,6 @@ group :production, :staging do
   gem 'rails_12factor'
   gem 'unicorn'
 end
+
+gem 'oboe-heroku', group: :staging
+
