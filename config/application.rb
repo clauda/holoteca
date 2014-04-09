@@ -18,9 +18,8 @@ module Holoteca
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += %W(#{config.root}/app/sweepers)
-    config.autoload_paths += %W(#{config.root}/assets/fonts)
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("vendor" "assets", "images")
 
     config.cache_store = :redis_store, ENV['REDISTOGO_URL'], { expires_in: 90.minutes }
     config.static_cache_control = 'public, max-age=2592000'
