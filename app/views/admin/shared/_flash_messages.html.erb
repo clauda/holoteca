@@ -1,0 +1,13 @@
+<% flash.each do |type, messages| %>
+  <div class="alert alert-<%= notify[type.to_sym] %> alert-dismissable">
+    <i class="fa fa-<%= notify[type.to_sym] %>"></i>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <% if messages.is_a?(String) %>
+      <b><%= messages %></b>
+    <% else %>
+      <% messages.each do |message| %>
+        <%= message %><br>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

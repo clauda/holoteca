@@ -1,0 +1,3 @@
+module CacheHelper
+
+end

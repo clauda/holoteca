@@ -1,0 +1,70 @@
+<div class="box box-danger">
+  <%= form_for([:admin, resource], html: { role: :form }) do |f| %>
+    <div class="box-header">
+      <h3 class="box-title">Novo Artigo <%= label_for resource.published unless resource.new_record? %></h3>
+      <div class="box-tools">
+        <div class="btn-group pull-right">
+          <%= link_to raw('<i class="fa fa-caret-left"></i> Todos'), admin_articles_path, class: 'btn btn-sm btn-default' %>
+
+          <% unless resource.new_record? %>
+          <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
+          <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, data: { confirm: 'Tem certeza?' } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="box-body pad">
+      <div class='row'>
+        <div class="form-group col-md-6">
+          <%= f.label :category, 'Categoria' %>
+          <%= f.select :category, Category.all.collect{ |category| [category.name, category.id] }, { selected: resource.category.try(:id) }, { class: 'form-control', required: true } %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :author, 'Autor' %>
+          <%= f.select :author, User.all.collect{ |author| [author.name, author.id] }, { selected: current_user.id }, { class: 'form-control', required: true } %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cover_url, 'URL da imagem da capa' %>
+        <%= f.text_field :cover_url, placeholder: 'link externo', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title, 'Título' %>
+        <%= f.text_field :title, placeholder: 'Título', class: 'form-control', required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :summary, 'Resumo' %> <i> (Chamada)</i>
+        <%= f.text_field :summary, placeholder: 'Resumo', class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :body, 'Texto' %>
+        <%= f.text_area :body, class: 'form-control', placeholder: 'Lorem Ipsum', style: "width: 100%; height: 600px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" %>
+      </div>
+
+      <% if resource.permalink %>
+      <div class="form-group">
+        <%= f.label :permalink %> <i>
+        <%= f.text_field :permalink, class: 'form-control', disabled: true %>
+      </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :tags, 'Tags' %>
+        <%= f.text_field :tags, placeholder: 'Adicionar Tag', class: 'form-control', data: { role: 'tagsinput' }, value: (resource.tags.empty? ? '' : resource.taggable) %>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <%= f.check_box :published, class: 'flat-red' %>
+          Publicar?
+        </label>
+      </div>
+    </div>
+    <div class="box-footer">
+      <%= f.submit "Salvar", class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,49 @@
+<div id="sidebar" class="rs col-md-4">
+  <ul>
+    <!--  TODO: search
+    <li id="search-6" class="widget widget_search">
+      <form action="http://demo.gawibowo.com/entrance/" class="searchform" method="get" role="search">
+        <div class="clearfix">
+          <input type="text" class="s" name="s" placeholder="Search...">
+          <button type="submit" class="searchsubmit"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+    </li>
+    -->
+
+  <% cache('lastest_posts', skip_digest: true) do %>
+    <li id="g7_posts-12" class="widget widget_g7_posts">
+      <h2 class="widgettitle"><span>Últimas</span></h2>
+      <ul>
+        <% @lastest.each do |article| %>
+          <% cache([article, "thumb"]) do %>
+          <li class="<%= article.category.to_param %>">
+            <div class="block-content">
+              <div class="block-category">
+                <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
+              </div>
+              <h4 class="block-heading">
+                <%= link_to article.title, article_path(article), title: article.title %>
+              </h4>
+              <div class="clear"></div>
+            </div>
+          </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+    <li class='fb'>
+      <div class="fb-like-box" data-href="https://www.facebook.com/HolotecaHQ" data-width="290" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+    </li>
+
+    <li id="g7_posts-12" class="widget widget_g7_posts">
+      <h2 class="widgettitle"><span>Você também vai querer saber...</span></h2>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+
+  </ul>
+</div>

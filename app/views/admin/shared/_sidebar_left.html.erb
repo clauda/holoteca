@@ -1,0 +1,61 @@
+<aside class="left-side sidebar-offcanvas">
+  <section class="sidebar">
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag gravatar_url(current_user.email), class: 'img-circle', alt: 'Mude de foto atravês do gravatar.com', title: 'Mude de foto atravês do gravatar.com' %>
+      </div>
+      <div class="pull-left info">
+        <p>Hello, <%= current_user.first_name %></p>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li class="active" data-controller='dashboard'>
+        <%= link_to admin_root_path do %>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        <% end %>
+      </li>
+
+      <li class="treeview" data-controller='articles'>
+        <a>
+          <i class="fa fa-file-text"></i>
+          <span>Artigos</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to new_admin_article_path do %>
+              <i class="fa fa-angle-double-right"></i> Novo
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_articles_path do %>
+              <i class="fa fa-angle-double-right"></i> Todos
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <li data-controller='files'>
+        <%= link_to admin_archives_path do %>
+          <i class="fa fa-picture-o"></i> <span>Imagens</span>
+        <% end %>
+      </li>
+
+      <li class="treeview" data-controller='settings'>
+        <a>
+          <i class="fa fa-cog"></i>
+          <span>Configurações</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <%= link_to admin_categories_path do %>
+              <i class="fa fa-angle-double-right"></i> Categorias
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</aside>

@@ -1,0 +1,42 @@
+<% cache([article, "card"]) do %>
+<article class="post <%= article.category.to_param %>">
+
+  <div class="entry-image">
+    <div class="entry-category">
+      <% if article.category %><%= link_to article.category.name, category_path(article.category), title: article.category.name %><% end %>
+    </div>
+    <%= link_to article_path(article), title: article.title do %>
+      <%= image_tag cover(article.cover_url), size: '200x150', alt: article.title %>
+      <div class="overlay"><i class="fa fa-plus-circle"></i></div>
+    <% end %>
+  </div>
+
+  <div class="entry-main">
+
+    <h2 class="entry-title">
+      <%= link_to article.title, article_path(article), title: article.title %>
+    </h2>
+
+    <div class="entry-meta">
+      <span class="entry-date updated">
+        <%= link_to article_path(article), title: article.title do %>
+          <i class="fa fa-clock-o"></i>
+          <time datetime=""><%= date_for article.published_at %></time>
+        <% end %>
+      </span>
+
+      <span class="vcard">
+        <%= link_to author_path(article.author), title: article.author.name, class: 'url fn' do %>
+          <i class="fa fa-user"></i>
+          <span><%= article.author.name %></span>
+        <% end %>
+      </span>
+    </div>
+
+    <div class="entry-content"><%= raw article.summary %></div>
+    <%= link_to 'Ler Mais', article_path(article), title: article.title, class: 'btn readmore' %>
+  </div>
+  <div class="clear"></div>
+
+</article>
+<% end %>

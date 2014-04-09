@@ -1,0 +1,19 @@
+<%
+  seo [
+    { property: 'description', content: @resource.name },
+    { property: 'og:title', content: @resource.name, type: 'property' },
+    { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
+    { property: 'og:description', content: @resource.name, type: 'property' }
+  ]
+  title "#{@resource.name} / Holoteca"
+%>
+
+<header class="archive-header">
+  <h1 class="page-title"><%= @resource.name %></h1>
+</header>
+
+<div class='posts blog-small'>
+  <% @resource.articles.visible.each do |article| %>
+    <%= render partial: 'article', locals: { article: article } %>
+  <% end %>
+</div>

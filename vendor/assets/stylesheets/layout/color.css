@@ -1,0 +1,94 @@
+/*
+  cat-1 - tecnologia
+  cat-2 - viagem
+  cat-3 - entretenimento
+  cat-4 - saude
+  cat-6 - arte
+*/
+#logo img { max-height: 30px; }
+a { color: #C51010; }
+#mainmenu > li:hover > a, #mainmenu ul { background-color: #C51010 }
+#mainmenu > li.current-menu-item > a, #mainmenu > li.current_page_item > a, #mainmenu > li.current-menu-ancestor > a, #mainmenu > li.current_page_ancestor > a { background-color: #C51010; }
+.block-title a, .block-title span { background-color: #e14d43; }
+.block-more > a:hover { color: #C51010; }
+.entry-image .entry-category a { background-color: #C51010; }
+.block-heading > a:hover,
+.posts .entry-title a:hover { color: #C51010; }
+.block-meta a:hover, .entry-meta a:hover { color: #C51010; }
+.widget li > a:hover { color: #C51010; }
+.btn, input[type='reset'], input[type='submit'], #submit { background-color: #C51010; }
+.btn.readmore:hover { border-color: #C51010; background-color: #C51010; }
+.next-prev a:hover { color: #C51010; }
+.author-link a:hover { color: #C51010; }
+.featured .entry-category a { background-color: #C51010; }
+.block-top:hover, .block-1 .block-side:hover, .posts .entry-image:hover { border-color: #C51010; }
+.pagination span.current, .pagination a:hover { background-color: #C51010; }
+.searchsubmit { background-color: #C51010 }
+.widgettitle span { border-color: #C51010 }
+.flexslider .flex-control-paging li a.flex-active { background-color: #C51010 }
+.entretenimento .entry-image .entry-category a { background: #1db79b; }
+.entretenimento .entry-main .entry-category a { color: #1db79b; }
+#wrapper .entretenimento a:hover { color: #1db79b; }
+.entretenimento a.readmore:hover { color: #fff; border-color: #1db79b; background: #1db79b; }
+.entretenimento .block-title a { background: #1db79b; }
+.featured .entretenimento .entry-category a { background: #1db79b; }
+.entretenimento .block-top:hover, .block-1.entretenimento .block-side:hover, .posts .entretenimento .entry-image:hover { border-color: #1db79b; }
+.entretenimento .block-category a { color: #1db79b; }
+/*
+.arte .entry-image .entry-category a { background: #C51010; }
+.arte .entry-main .entry-category a { color: #C51010; }
+#wrapper .arte a:hover { color: #C51010; }
+.arte a.readmore:hover { color: #fff; border-color: #C51010; background: #C51010; }
+.arte .block-title a { background: #C51010; }
+.featured .arte .entry-category a { background: #C51010; }
+.arte .block-top:hover, .block-1.arte .block-side:hover, .posts .arte .entry-image:hover { border-color: #C51010; }
+.arte .block-category a { color: #C51010; }
+*/
+.saude .entry-image .entry-category a { background: #ff963a; }
+.saude .entry-main .entry-category a { color: #ff963a; }
+#wrapper .saude a:hover { color: #ff963a; }
+.saude a.readmore:hover { color: #fff; border-color: #ff963a; background: #ff963a; }
+.saude .block-title a { background: #ff963a; }
+.featured .saude .entry-category a { background: #ff963a; }
+.saude .block-top:hover, .block-1.saude .block-side:hover, .posts .saude .entry-image:hover { border-color: #ff963a; }
+.saude .block-category a { color: #ff963a; }
+.cat-8 .entry-image .entry-category a { background: #88c462; }
+.cat-8 .entry-main .entry-category a { color: #88c462; }
+#wrapper .cat-8 a:hover { color: #88c462; }
+.cat-8 a.readmore:hover { color: #fff; border-color: #88c462; background: #88c462; }
+.cat-8 .block-title a { background: #88c462; }
+.featured .cat-8 .entry-category a { background: #88c462; }
+.cat-8 .block-top:hover, .block-1.cat-8 .block-side:hover, .posts .cat-8 .entry-image:hover { border-color: #88c462; }
+.cat-8 .block-category a { color: #88c462; }
+.cat-7 .entry-image .entry-category a { background: #e14d43; }
+.cat-7 .entry-main .entry-category a { color: #e14d43; }
+#wrapper .cat-7 a:hover { color: #e14d43; }
+.cat-7 a.readmore:hover { color: #fff; border-color: #e14d43; background: #e14d43; }
+.cat-7 .block-title a { background: #e14d43; }
+.featured .cat-7 .entry-category a { background: #e14d43; }
+.cat-7 .block-top:hover, .block-1.cat-7 .block-side:hover, .posts .cat-7 .entry-image:hover { border-color: #e14d43; }
+.cat-7 .block-category a { color: #e14d43; }
+.arte .entry-image .entry-category a { background: #666699; }
+.arte .entry-main .entry-category a { color: #666699; }
+#wrapper .arte a:hover { color: #666699; }
+.arte a.readmore:hover { color: #fff; border-color: #666699; background: #666699; }
+.arte .block-title a { background: #666699; }
+.featured .arte .entry-category a { background: #666699; }
+.arte .block-top:hover, .block-1.arte .block-side:hover, .posts .arte .entry-image:hover { border-color: #666699; }
+.arte .block-category a { color: #666699; }
+.tecnologia .entry-image .entry-category a { background: #9457b6; }
+.tecnologia .entry-main .entry-category a { color: #9457b6; }
+#wrapper .tecnologia a:hover { color: #9457b6; }
+.tecnologia a.readmore:hover { color: #fff; border-color: #9457b6; background: #9457b6; }
+.tecnologia .block-title a { background: #9457b6; }
+.featured .tecnologia .entry-category a { background: #9457b6; }
+.tecnologia .block-top:hover, .block-1.tecnologia .block-side:hover, .posts .tecnologia .entry-image:hover { border-color: #9457b6; }
+.tecnologia .block-category a { color: #9457b6; }
+.viagem .entry-image .entry-category a { background: #3dbfd9; }
+.viagem .entry-main .entry-category a { color: #3dbfd9; }
+#wrapper .viagem a:hover { color: #3dbfd9; }
+.viagem a.readmore:hover { color: #fff; border-color: #3dbfd9; background: #3dbfd9; }
+.viagem .block-title a { background: #3dbfd9; }
+.featured .viagem .entry-category a { background: #3dbfd9; }
+.viagem .block-top:hover, .block-1.viagem .block-side:hover, .posts .viagem .entry-image:hover { border-color: #3dbfd9; }
+.viagem .block-category a { color: #3dbfd9; }

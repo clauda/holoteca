@@ -1,0 +1,12 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} na rede'
+        alert: '%{resource_name} falhou.'
+      update:
+        notice: '%{resource_name} atualizado'
+        alert: '%{resource_name} falhou'
+      destroy:
+        notice: '%{resource_name} pro espaço'
+        alert: '%{resource_name} deu pau ao remover'

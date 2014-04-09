@@ -1,0 +1,34 @@
+box: iori/iori@0.0.3
+# Build definition
+# See the Rails section on the wercker devcenter:
+# http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
+# You will want to define your database as follows:
+services:
+    - wercker/mongodb@1.0.1
+# See more about services on our devcenter:
+# http://devcenter.wercker.com/articles/services/
+build:
+    # The steps that will be executed on build
+    steps:
+        # A step that executes `bundle install` command
+        - bundle-install
+        # A step that prepares the database.yml using the database in services
+        # A custom script step, name value is used in the UI
+        # and the code value contains the command that get executed
+        - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+
+        - script:
+               name: rspec
+               code: bundle exec rake RAILS_ENV=test
+    after-steps:
+        - mies/email-notify@0.0.4:
+            from: alerts@wercker.com
+            to: claudia@holoteca.com.br
+            username: claudia@sorta.in
+            password: $EMAIL_PASS
+            host: smtp.gmail.com:587

@@ -1,0 +1,12 @@
+.but-red a { color: #C51010; }
+.but-red .btn-primary { color: inherit; }
+.but-red .logo { background-color: #C51010 }
+.but-red .navbar { background-color: #D20026 }
+.but-red .navbar .nav a { color: white; }
+.navbar-nav > .user-menu > .dropdown-menu > li.user-body > div > a { color: #C51010; }
+.alert.alert-dismissable { border-radius: 0; margin-bottom: 0; }
+.field_with_errors label { color: #f56954; }
+.field_with_errors input, .field_with_errors select, .field_with_errors textarea {
+  border-color: #f56954 !important;
+  box-shadow: none; }
+.fa { padding: 0 6px; }

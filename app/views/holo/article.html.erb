@@ -1,0 +1,79 @@
+<%
+  seo [
+    { property: 'description', content: @resource.summary },
+    { property: 'og:title', content: @resource.title, type: 'property' },
+    { property: 'og:image', content: @resource.cover_url, type: 'property' },
+    { property: 'og:description', content: @resource.summary, type: 'property' }
+  ]
+  title "#{@resource.title} / Holoteca"
+%>
+
+<article class="post single">
+
+  <header class="entry-header">
+    <div class="entry-image">
+      <% if @resource.cover_url %><%= image_tag @resource.cover_url, alt: @resource.title %><% end %>
+    </div>
+
+    <h1 class="entry-title"><%= @resource.title %></h1>
+
+    <div class="entry-meta">
+      <% if @resource.category %>
+      <span class="entry-category">
+        <%= link_to category_path(@resource.category), title: @resource.category.name do %>
+          <%= @resource.category.name %>
+        <% end %>
+      </span>
+      <% end %>
+
+      <span class="entry-date updated">
+        <%= link_to article_path(@resource), title: @resource.title do %>
+          <i class="fa fa-clock-o"></i>
+          <time datetime=""><%= date_for @resource.published_at %></time>
+        <% end %>
+      </span>
+
+      <span class="vcard">
+        <%= link_to author_path(@resource.author), class: 'url fn', title: @resource.author.name do %>
+          <i class="fa fa-user"></i>
+          <span><%= @resource.author.name %></span>
+        <% end %>
+      </span>
+    </div>
+  </header>
+
+  <div class="entry-content">
+    <%= raw @resource.body %>
+  </div>
+
+  <footer class="entry-footer">
+    <div>
+      <% @resource.tags.each do |tag| %>
+        <span class="block-title">
+        <%= link_to tag_path(tag), rel: 'tag' do %>
+          <%= tag.name %>    <i class="fa fa-angle-right"></i>
+        <% end %>
+        </span>
+      <% end %>
+    </div>
+
+    <nav class="next-prev clearfix">
+      <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='5630529'></div>
+      <!--
+      <div class="nav-previous">
+        <div>Anterior</div>
+        <%#= link_to 'On the Road to Dreams', '#', rel: 'prev' %>
+      </div>
+
+      <div class="nav-next">
+        <div>Próximo</div>
+        <%#= link_to 'Winter Night City', '#', rel: 'next' %>
+      </div>
+      -->
+    </nav>
+
+  </footer>
+
+</article>
+
+<%= render partial: 'author', locals: { resource: @resource.author } %>

@@ -1,0 +1,52 @@
+<section class="content-header">
+  <h1>Artigos <small>Post</small></h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-danger">
+        <div class="box-header">
+            <h3 class="box-title"></h3>
+            <div class="box-tools">
+              <%= label_for resource.published %>
+              <div class="btn-group pull-right">
+                <%= link_to raw('<i class="fa fa-caret-left"></i> Todos'), admin_articles_path, class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-plus"></i>'), new_admin_article_path, class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-edit"></i>'), edit_admin_article_path(resource), class: 'btn btn-sm btn-default' %>
+                <%= link_to raw('<i class="fa fa-times"></i>'), admin_article_path(resource), class: 'btn btn-sm btn-default', method: :delete, dat: { confirm: 'Tem certeza?' } %>
+              </div>
+              <!--
+              TODO: search
+                <div class="input-group">
+                  <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                  <div class="input-group-btn">
+                    <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              -->
+            </div>
+        </div>
+
+        <div class="box-body">
+          <h5 class='pull-right'>
+            <i class="fa fa-folder-o"></i> <%= resource.category.try :name %>
+            <i class="fa fa-user"></i> <%= resource.author.try :name %>
+            <i class="fa fa-calendar"></i> <%= date_for resource.published_at %>
+          </h5>
+          <%= image_tag resource.cover_url, class: 'cover' %>
+          <h1><%= resource.title %></h1>
+          <h3><blockquote><%= raw resource.summary %></blockquote><br /></h3>
+
+          <%= raw resource.body %>
+
+          <br />
+          <h4><% resource.tags.each do |tag| %> <span class="label label-primary"><%= tag.name %></span> <% end %></h4>
+          <br />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
