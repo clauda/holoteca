@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-faces
  *= require layout/bootstrap.min
  *= require admin/font-awesome
  *= require layout/flexslider
