@@ -5,16 +5,20 @@ class Admin::ArticlesController < InheritedResources::Base
   after_filter :expire_lastest,   only: [ :create, :update ]
   after_filter :expire_resource,  only: [ :update ]
 
+  caches_action :index, :show
+
   defaults finder: :by_slug
   layout 'admin'
 
   def create
+    expire_action action: :index
     resource = Article.new permitted_params[:article]
     resource.taggify params[:article][:tags]
     create!
   end
 
   def update
+    expire_action action: :index
     resource.taggify params[:article][:tags]
     update!
   end
