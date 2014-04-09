@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -17,7 +17,7 @@ gem 'redis'
 gem 'redis-rails'
 
 # Assets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.3'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
@@ -40,6 +40,8 @@ gem 'whenever', require: false
 gem 'rack-mini-profiler', require: false
 
 group :development do
+  gem 'spring'
+
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
