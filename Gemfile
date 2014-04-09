@@ -45,6 +45,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
 
+  gem 'foreman'
   gem 'thin'
   gem 'mailcatcher'
   gem 'better_errors'
@@ -56,7 +57,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 2.14'
   gem 'mongoid-rspec'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end

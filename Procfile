@@ -1,3 +1,3 @@
-web: bundle exec rails server
-redis-server: redis-server
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+redis: redis-server
 mailcatcher: mailcatcher
