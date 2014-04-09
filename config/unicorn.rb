@@ -8,11 +8,11 @@ before_fork do |server, worker|
     Process.kill 'QUIT', Process.pid
   end
 
-  if defined?(Redis)
-    # this throws errors
-    # Redis.current tries to connect localhost
-    Redis.current.quit
-  end
+  # if defined?(Redis)
+  #   # this throws errors
+  #   # Redis.current tries to connect localhost
+  #   Redis.current.quit
+  # end
 end
 
 after_fork do |server, worker|
@@ -20,7 +20,7 @@ after_fork do |server, worker|
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
   end
 
-  if defined?(Redis)
-    Redis.current = Redis.new(url: ENV['REDISCLOUD_URI'])
-  end
+  # if defined?(Redis)
+  #   Redis.current = Redis.new(url: ENV['REDISCLOUD_URI'])
+  # end
 end

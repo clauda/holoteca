@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe HoloController do
+  let(:article){ FactoryGirl.create :article }
 
   describe "GET 'index'" do
-    let(:article){ FactoryGirl.create :article }
-    # before { binding.pry }
+
     it 'should be successful' do
       get :index
       expect(response).to be_success
