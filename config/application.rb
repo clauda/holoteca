@@ -22,7 +22,7 @@ module Holoteca
     config.autoload_paths += %W(#{config.root}/app/sweepers)
     config.autoload_paths += %W(#{config.root}/assets/fonts)
 
-    config.cache_store = :redis_store, (ENV['REDISTOGO_URL'] || 'redis://localhost:6379/0/holoteca'), { expires_in: 90.minutes }
+    config.cache_store = :redis_store, ENV['REDISTOGO_URL'], { expires_in: 90.minutes }
     config.static_cache_control = 'public, max-age=2592000'
     config.action_dispatch.rack_cache = true
 
