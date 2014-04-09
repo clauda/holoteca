@@ -1,3 +1,3 @@
 web: bundle exec rails server
-redis: redis-server
+redis-server: redis-server
 mailcatcher: mailcatcher
