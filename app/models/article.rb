@@ -11,6 +11,7 @@ class Article
   field :summary,     type: String
   field :permalink,   type: String
   field :cover_url,   type: String
+  field :keywords,    type: Array
 
   validates :title, :body, :summary, :category, :author, presence: true
   validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }
@@ -20,13 +21,20 @@ class Article
 
   alias_attribute :name, :title
 
-  scope :visible, ->{ where(published: true).order(published_at: :desc) }
+  scope :visible, ->{ where(published: true).order(published_at: :desc).cache }
   scope :lastest, ->{ visible.limit(5) }
+  scope :related, ->(keys, id){ visible.nin(_id: id).in(keywords: keys).limit(3).cache }
 
-  before_save :setup
+  before_save :publish
+  before_save :to_keys
 
-  def setup
+  def publish
     self.published_at = Time.now if self.published_changed?
+  end
+
+  def to_keys
+    self.keywords = []
+    self.tags.pluck(:name).each { |key| self.keywords.push key }
   end
 
 end

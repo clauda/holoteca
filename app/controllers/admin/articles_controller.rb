@@ -2,7 +2,7 @@ class Admin::ArticlesController < InheritedResources::Base
   include Cacheable
 
   before_filter :authenticate_user!
-  after_filter :expire_lastest,   only: [ :create, :update ]
+  after_filter :expire_sidebar,   only: [ :create, :update ]
   after_filter :expire_resource,  only: [ :update ]
 
   caches_action :index, :show

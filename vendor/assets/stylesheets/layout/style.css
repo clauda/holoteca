@@ -357,6 +357,8 @@ main {
 .featured {
 	margin-bottom: 80px;
 }
+ul.featured li { margin-bottom: 14px }
+
 .featured .post {
 	position: relative;
 	overflow: hidden;
@@ -380,6 +382,7 @@ main {
 #wrapper .featured header a:hover {
 	color: #fff;
 }
+.featured h4 { margin-top: 10px }
 .featured h2 {
 	margin: 0;
 	font-size: 14px;

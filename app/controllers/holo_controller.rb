@@ -4,11 +4,12 @@ class HoloController < ApplicationController
 
   def index
     @articles = Article.includes(:category, :author).visible
-    fresh_when etag: @articles, last_modified: @articles.last.published_at.utc, public: true
+    fresh_when last_modified: @articles.last.published_at.utc, public: true
   end
 
   def article
     @resource = Article.by_slug params[:article_id]
+    @related = Article.related @resource.tags.pluck(:name), @resource.id
     fresh_when etag: @resource, last_modified: @resource.published_at.utc, public: true
     render_404 unless @resource and @resource.published
   end
