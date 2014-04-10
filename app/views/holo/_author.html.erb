@@ -46,7 +46,7 @@
       </li>
       <% end %>
 
-      <% if resource.site %>
+      <% unless resource.site.blank? %>
         <li class="author-website">
           <i class="fa fa-external-link"></i>
           <%= link_to resource.site, url_for(resource.site), target: '_blank' %>

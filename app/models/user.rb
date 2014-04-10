@@ -44,4 +44,8 @@ class User
     self.name.split(' ').first
   end
 
+  def admin?
+    self.role == 'admin'
+  end
+
 end

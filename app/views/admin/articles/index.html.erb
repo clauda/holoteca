@@ -32,7 +32,7 @@
               <th>Status</th>
               <th></th>
             </tr>
-            <% collection.each do |article| %>
+            <% @articles.each do |article| %>
               <tr>
                 <td><%= link_to article.title, admin_article_path(article) %></td>
                 <td><%= article.author.name %></td>

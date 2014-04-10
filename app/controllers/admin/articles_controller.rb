@@ -10,10 +10,18 @@ class Admin::ArticlesController < InheritedResources::Base
   defaults finder: :by_slug
   layout 'admin'
 
+  def index
+    @articles = current_user.admin? ? collection.order(published_at: :desc) : current_user.articles.order(published_at: :desc)
+    super
+  end
+
   def create
     resource = Article.new permitted_params[:article]
     resource.taggify params[:article][:tags]
-    create!
+    create! do |success, failure|
+      success.html { redirect_to admin_articles_path, notice: 'Artigo Salvo!' }
+      failure.html { redirect_to admin_articles_path, alert: 'Deu pau!' }
+    end
   end
 
   def update

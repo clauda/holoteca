@@ -49,11 +49,13 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
+          <% if current_user.admin? %>
           <li>
             <%= link_to admin_categories_path do %>
               <i class="fa fa-angle-double-right"></i> Categorias
             <% end %>
           </li>
+          <% end %>
         </ul>
       </li>
     </ul>
