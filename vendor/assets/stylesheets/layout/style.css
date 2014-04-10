@@ -229,8 +229,11 @@ main {
 	margin-top: 60px;
 }
 #footer-area {
-	margin-top: 60px;
+	margin-top: 40px;
 }
+#footer-area ul.links { list-style: none; margin-top: 18px; }
+#footer-area a { color: white; }
+
 #footer-widget {
 	background-color: #C51010;
 	color: white;

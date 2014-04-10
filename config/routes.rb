@@ -12,6 +12,8 @@ Holoteca::Application.routes.draw do
     resources :articles
   end
 
+  get 'privacidade', to: 'statics#privacy', as: :privacy
+
   get '/uploads/archives/:id/:filename', to: 'archives#image'
   get '/tag/:id',    to: 'holo#tag',      as: :tag
   get '/autor/:id',  to: 'holo#author',   as: :author
