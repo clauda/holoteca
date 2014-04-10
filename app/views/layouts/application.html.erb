@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="copyright" content="Holoteca">
+    <meta name="google-site-verification" content="DKz_CEt64MdDmCsB91kLDxqsswCCAxRr9qERVT2Wrt8" />
     <%= yield :metatags -%>
     <meta property="og:url" content="<%= url(request.path) %>" />
     <meta property="og:type" content="website" />
@@ -43,5 +44,15 @@
 
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= render 'shared/shareholic' %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-2347706-21', 'holoteca.com.br');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>

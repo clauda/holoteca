@@ -727,7 +727,7 @@ ul.featured li { margin-bottom: 14px }
 .posts .entry-image:hover {
 	border-color: #e74c3c;
 }
-.blog-small .entry-image { height: 140px; }
+.blog-small .entry-image { height: 130px; width: 200px; }
 
 .entry-image .entry-category {
 	position: absolute;
@@ -771,8 +771,8 @@ ul.featured li { margin-bottom: 14px }
 .block-side img,
 .posts .entry-image img {
 	transition: all 1s ease 0s;
-	/*width: 100%;*/
-	height: auto;
+	width: 120%;
+	margin-top: -10%;
 }
 .block-top > a:hover img,
 .block-side > a:hover img,
