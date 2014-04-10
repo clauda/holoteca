@@ -57,6 +57,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :font, 'Fonte' %> <i>
+        <%= f.text_field :font, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <label>
           <%= f.check_box :published, class: 'flat-red' %>
           Publicar?

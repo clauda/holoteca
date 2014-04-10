@@ -44,6 +44,7 @@
           <br />
           <h4><% resource.tags.each do |tag| %> <span class="label label-primary"><%= tag.name %></span> <% end %></h4>
           <br />
+          <% if resource.font %><p>Fonte: <%= link_to resource.font, resource.font %></p><% end %>
 
         </div>
       </div>

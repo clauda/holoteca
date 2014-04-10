@@ -12,6 +12,7 @@ class Article
   field :summary,     type: String
   field :permalink,   type: String
   field :cover_url,   type: String
+  field :font,        type: String
   field :keywords,    type: Array
 
   validates :title, :body, :summary, :category, :author, presence: true

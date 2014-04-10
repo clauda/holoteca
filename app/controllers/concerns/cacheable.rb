@@ -7,6 +7,7 @@ module Cacheable
 
     def expire_modules
       expire_action action: :index
+      expire_action action: :show
       expire_fragment 'lastest_posts'
       expire_fragment 'featured_posts'
     end

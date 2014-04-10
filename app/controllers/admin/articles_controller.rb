@@ -24,7 +24,7 @@ class Admin::ArticlesController < InheritedResources::Base
   protected
 
     def permitted_params
-      params.permit article: [ :category, :author, :title, :summary, :body, :published, :featured, :cover_url, tags: [] ]
+      params.permit article: [ :category, :author, :title, :summary, :body, :published, :featured, :font, :cover_url, tags: [] ]
     end
 
 end
