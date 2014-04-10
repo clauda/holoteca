@@ -3,7 +3,7 @@ class HoloController < ApplicationController
   after_action :raise_404, only: [ :category, :tag, :author ]
 
   def index
-    @articles = Article.includes(:category, :author).visible.limit 10
+    @articles = Article.includes(:category, :author).visible.limit 9
     @featured_slide = Article.featured unless fragment_exist? 'featured_posts'
     fresh_when last_modified: @articles.last.published_at.utc, public: true
   end

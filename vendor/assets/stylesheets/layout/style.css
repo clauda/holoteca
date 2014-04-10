@@ -1027,6 +1027,12 @@ article.page > .entry-footer {
 	padding: 0;
 	list-style: none;
 }
+#sidebar li {
+	margin-bottom: 20px;
+}
+
+#sidebar li > ul li { margin-bottom: 0; }
+
 #sidebar.rs > ul {
 	margin-left: 20px;
 }
