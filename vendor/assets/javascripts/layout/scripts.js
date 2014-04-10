@@ -140,18 +140,14 @@ $(document).ready(function(){
 
 	/**
 	 * add flex slider call if plugin included
+	 */
 	if ($.fn.flexslider) {
-		$(window).load(function() {
-			$('.flexslider').flexslider({
-				animation: g7.slider_animation,
-				slideshowSpeed: parseInt(g7.slider_slideshowSpeed),
-				animationSpeed: parseInt(g7.slider_animationSpeed),
-				pauseOnHover: g7.slider_pauseOnHover,
-				smoothHeight: true,
-				directionNav: true
-			});
+		$('.flexslider').flexslider({
+			animation: 'slide',
+			pauseOnHover: true,
+			smoothHeight: true,
+			directionNav: true
 		});
 	}
-	 */
 
 })(jQuery);

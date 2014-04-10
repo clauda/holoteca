@@ -9,7 +9,7 @@
         <div class="box-header">
             <h3 class="box-title"></h3>
             <div class="box-tools">
-              <%= label_for resource.published %>
+              <%= label_for resource.published %> <% if resource.featured %><span class='label label-danger'>Destaque</span><% end %>
               <div class="btn-group pull-right">
                 <%= link_to raw('<i class="fa fa-caret-left"></i> Todos'), admin_articles_path, class: 'btn btn-sm btn-default' %>
                 <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(resource), class: 'btn btn-sm btn-default' %>

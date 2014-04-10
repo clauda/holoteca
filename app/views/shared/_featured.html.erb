@@ -1,0 +1,20 @@
+<li class="widget">
+  <h2 class="widgettitle"><span>Você também vai querer saber...</span></h2>
+  <ul class='featured'>
+    <% resources.each do |article| %>
+      <% cache([article, "featured"]) do %>
+        <li class="post <%= article.category.to_param %>">
+          <%= link_to article_path(article), title: article.title do %>
+            <%= image_tag article.cover_url, alt: article.title, size: '300x150' %>
+          <% end %>
+          <header>
+            <span class="entry-category">
+              <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
+            </span>
+            <h4><%= link_to article.title, article_path(article), title: article.title %></h4>
+          </header>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</li>

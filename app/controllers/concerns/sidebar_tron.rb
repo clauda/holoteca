@@ -8,8 +8,8 @@ module SidebarTron
   protected
 
     def sidebar
-      @categories = Category.all unless fragment_exist? :top_menu
-      @lastest = Article.includes(:category).lastest unless fragment_exist? :lastest_posts
+      @categories = Category.all unless fragment_exist? 'top_menu'
+      @lastest = Article.includes(:category).lastest unless fragment_exist? 'lastest_posts'
     end
 
     def raise_404

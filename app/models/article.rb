@@ -7,6 +7,7 @@ class Article
   field :title,       type: String
   field :body,        type: String
   field :published,   type: Mongoid::Boolean, default: false
+  field :featured,    type: Mongoid::Boolean, default: true
   field :published_at, type: Time, default: ->{ Time.now }
   field :summary,     type: String
   field :permalink,   type: String
@@ -23,6 +24,7 @@ class Article
 
   scope :visible, ->{ where(published: true).order(published_at: :desc).cache }
   scope :lastest, ->{ visible.limit(5) }
+  scope :featured, ->{ visible.where(featured: true).limit(8) }
   scope :related, ->(keys, id){ visible.nin(_id: id).in(keywords: keys).limit(3).cache }
 
   before_save :publish

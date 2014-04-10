@@ -38,10 +38,13 @@
                 <td><%= article.author.name %></td>
                 <td><%= article.category.try :name %></td>
                 <td><%= date_for article.published_at %></td>
-                <td><%= label_for article.published %></td>
+                <td>
+                  <%= label_for article.published %>
+                  <% if article.featured %><span class='label label-danger'>Destaque</span><% end %>
+                </td>
                 <td>
                   <div class="btn-group">
-                    <%= link_to raw('<i class="fa fa-external-link"> Ver no site </i>'), article_path(article), class: 'btn btn-sm btn-default' %>
+                    <%= link_to raw('<i class="fa fa-external-link"></i>'), article_path(article), class: 'btn btn-sm btn-default', title: 'Ver no Site' %>
                     <%= link_to raw('<i class="fa fa-edit"> Editar </i>'), edit_admin_article_path(article), class: 'btn btn-sm btn-default' %>
                     <%= link_to raw('<i class="fa fa-times"> Remover</i>'), admin_article_path(article), class: 'btn btn-sm btn-default', method: :delete, data: { confirm: 'Tem certeza?' } %>
                   </div>

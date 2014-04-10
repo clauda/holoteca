@@ -11,9 +11,29 @@
 <div class="posts blog-masonry">
   <div class="row">
 
+  <% cache('featured_posts', skip_digest: true) do %>
+    <div class="flexslider featured">
+      <ul class="slides">
+        <% @featured_slide.each do |article| %>
+          <li class="post <%= article.category.try(:permalink) %>">
+            <%= link_to article_path(article), title: article.title do %>
+              <%= image_tag cover(article.cover_url), size: '720x320', alt: article.title %>
+            <% end %>
+            <header>
+              <span class="entry-category">
+                <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
+              </span>
+              <h2><%= link_to article.title, article_path(article), title: article.title%></h2>
+            </header>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <% @articles.each do |article| %>
     <% cache([article, "card"]) do %>
-    <article class="post col-sm-6 col-md-6">
+    <article class="post col-sm-6 col-md-6 <%= article.category.try(:permalink) %>">
       <div class="entry-image">
         <div class="entry-category">
           <% if article.category %><%= link_to article.category.name, category_path(article.category) %><% end %>
