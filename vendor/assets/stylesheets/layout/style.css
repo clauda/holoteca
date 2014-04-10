@@ -525,7 +525,7 @@ ul.featured li { margin-bottom: 14px }
 }
 .single .entry-footer {
 	margin-top: 40px;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 
 .tags {
@@ -538,7 +538,7 @@ ul.featured li { margin-bottom: 14px }
 	color: #999;
 }
 .author-info {
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 }
 .author-info .avatar {
 	margin-right: 15px;
@@ -577,13 +577,13 @@ ul.featured li { margin-bottom: 14px }
 .author-website a {
 	font-size: 13px;
 }
-.author-website i {
+.author-website .fai {
 	font-size: 10px;
 	margin-right: 3px;
 }
 .author-info .widget_g7_social,
 .archive-meta .widget_g7_social {
-	margin-top: 14px;
+	margin: 14px 113px 0;
 }
 .author-info .widget_g7_social ul,
 .archive-meta .widget_g7_social ul {
@@ -596,6 +596,8 @@ ul.featured li { margin-bottom: 14px }
 	font-size: 14px;
 	width: 14px;
 }
+.widget_g7_social .author-website i.fa { color: #555; margin-top: 10px; margin-left: 10px; }
+
 .author-info .widget_g7_social .social-box,
 .archive-meta .widget_g7_social .social-box {
 	line-height: 14px;
@@ -1034,7 +1036,7 @@ article.page > .entry-footer {
 	margin-bottom: 20px;
 }
 
-#sidebar li > ul li { margin-bottom: 0; }
+#sidebar li > ul.lastest li { margin-bottom: 0; }
 
 #sidebar.rs > ul {
 	margin-left: 20px;
@@ -1306,7 +1308,7 @@ article.page > .entry-footer {
 }
 .widget_g7_social li a,
 .widget_g7_subpages li a {
-	color: #555;
+	/*color: #555;*/
 }
 .widget .video-desc {
 	color: #777;

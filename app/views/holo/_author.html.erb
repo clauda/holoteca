@@ -13,13 +13,6 @@
     <p><%= resource.about %></p>
   </div>
 
-  <% if resource.site %>
-  <div class="author-website">
-    <i class="fa fa-external-link"></i>
-    <%= link_to resource.site, url_for(resource.site), target: '_blank' %>
-  </div>
-  <% end %>
-
   <div class="widget_g7_social">
     <ul class="horizontal circle">
 
@@ -51,6 +44,13 @@
           </span>
         <% end %>
       </li>
+      <% end %>
+
+      <% if resource.site %>
+        <li class="author-website">
+          <i class="fa fa-external-link"></i>
+          <%= link_to resource.site, url_for(resource.site), target: '_blank' %>
+        </li>
       <% end %>
 
     </ul>

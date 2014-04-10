@@ -22,7 +22,7 @@
   <% cache('lastest_posts', skip_digest: true) do %>
     <li id="g7_posts-12" class="widget widget_g7_posts">
       <h2 class="widgettitle"><span>Últimas</span></h2>
-      <ul>
+      <ul class='lastest'>
         <% @lastest.each do |article| %>
           <% cache([article, "thumb"]) do %>
           <li class="<%= article.category.to_param %>">
