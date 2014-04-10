@@ -535,7 +535,7 @@ ul.featured li { margin-bottom: 14px }
 	color: #999;
 }
 .author-info {
-	/*margin-top: 60px;*/
+	padding-bottom: 40px;
 }
 .author-info .avatar {
 	margin-right: 15px;
