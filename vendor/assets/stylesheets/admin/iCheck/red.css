@@ -9,7 +9,7 @@
     padding: 0;
     width: 22px;
     height: 22px;
-    background: url(/assets/admin/iCheck/red.png) no-repeat;
+    background: url(/vendor/red.png) no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -55,7 +55,7 @@
        only screen and (min-device-pixel-ratio: 1.5) {
     .icheckbox_square-red,
     .iradio_square-red {
-        background-image: url(/assets/admin/iCheck/red@2x.png);
+        background-image: url(/vendor/red@2x.png);
         -webkit-background-size: 240px 24px;
         background-size: 240px 24px;
     }
