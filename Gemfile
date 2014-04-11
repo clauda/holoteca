@@ -42,10 +42,10 @@ gem 'rack-mini-profiler', require: false
 group :development do
   gem 'spring'
 
-  gem 'capistrano'
-  gem 'capistrano-rails'
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
   gem 'rvm1-capistrano3', require: false
-  gem 'capistrano-bundler'
+  gem 'capistrano-bundler', require: false
 
   gem 'foreman'
   gem 'thin'

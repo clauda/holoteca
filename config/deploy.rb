@@ -3,7 +3,11 @@ lock '3.1.0'
 
 set :application, 'holoteca'
 set :repo_url, 'git@github.com:krawdyah/holoteca.git'
-
+set :branch, 'master'
+set :deploy_to, '/var/www/holoteca'
+set :deploy_via, :remote_cache
+set :default_stage, 'production'
+set :user, 'claudia'
 set :ssh_options, { port: 5953, forward_agent: true }
 set :use_sudo, false
 
@@ -25,7 +29,7 @@ set :rvm1_ruby_version, '2.1.1'
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/mongoid.yml}

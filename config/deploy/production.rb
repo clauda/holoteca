@@ -7,9 +7,9 @@ set :stage, :production
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, '162.243.127.34'
-role :web, '162.243.127.34'
-role :db,  '162.243.127.34', primary: true
+role :app, %w{162.243.127.34}
+role :web, %w{162.243.127.34}
+role :db,  %w{162.243.127.34}
 
 # Extended Server Syntax
 # ======================
