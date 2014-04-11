@@ -44,7 +44,7 @@ group :development do
 
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano-rvm'
+  gem 'rvm1-capistrano3', require: false
   gem 'capistrano-bundler'
 
   gem 'foreman'
