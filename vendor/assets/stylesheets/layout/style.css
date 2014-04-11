@@ -461,7 +461,7 @@ ul.featured li { margin-bottom: 14px }
 	font-weight: 300;
 }
 .single header .entry-image { height: 320px; overflow: hidden; vertical-align: middle; }
-.single header .entry-image img { width: 720px; height: auto; vertical-align: middle; }
+.single header .entry-image img { width: 720px; height: auto; vertical-align: middle; margin-top: -10px; }
 .single header .entry-image,
 .page header .entry-image {
 	margin-bottom: 20px;
@@ -777,7 +777,7 @@ ul.featured li { margin-bottom: 14px }
 .posts .entry-image img {
 	transition: all 1s ease 0s;
 	width: 120%;
-	margin-top: -10%;
+	/*margin-top: -10%;*/
 }
 .block-top > a:hover img,
 .block-side > a:hover img,

@@ -5,7 +5,7 @@
       <% cache([article, "featured"]) do %>
         <li class="post <%= article.category.to_param %>">
           <%= link_to article_path(article), title: article.title do %>
-            <%= image_tag article.cover_url, alt: article.title, size: '300x150' %>
+            <%= image_tag cover(article.cover_url), alt: article.title, size: '300x190' %>
           <% end %>
           <header>
             <span class="entry-category">

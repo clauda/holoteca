@@ -24,7 +24,7 @@ class Article
   alias_attribute :name, :title
 
   scope :visible, ->{ where(published: true).order(published_at: :desc).cache }
-  scope :lastest, ->{ visible.limit(5) }
+  scope :lastest, ->{ visible.limit(8) }
   scope :featured, ->{ visible.where(featured: true).limit(8) }
   scope :related, ->(keys, id){ visible.nin(_id: id).in(keywords: keys).limit(3).cache }
 

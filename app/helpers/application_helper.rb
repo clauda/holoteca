@@ -35,7 +35,7 @@ module ApplicationHelper
   end
 
   def cover url = nil
-    url.nil? ? image_path('default320.png') : url
+    (url.nil? || url.blank?) ? image_path('default320.png') : url
   end
 
   class Enum
