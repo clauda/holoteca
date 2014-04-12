@@ -39,6 +39,7 @@ gem 'whenever', require: false
 
 # Addons
 gem 'rack-mini-profiler', require: false
+gem 'dotenv-rails'
 
 group :development do
   gem 'spring'

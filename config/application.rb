@@ -47,5 +47,3 @@ module Holoteca
 
   end
 end
-
-HOLO = YAML.load_file("#{Rails.root}/config/holoteca.yml")
