@@ -10,9 +10,10 @@ class HoloController < ApplicationController
 
   def article
     @resource = Article.by_slug params[:article_id]
+    render_404 unless @resource and @resource.published?
+
     @related = Article.related @resource.tags.pluck(:name), @resource.id
     fresh_when etag: @resource, last_modified: @resource.published_at.utc, public: true
-    render_404 unless @resource and @resource.published
   end
 
   def category

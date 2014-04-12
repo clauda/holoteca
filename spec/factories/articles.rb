@@ -6,8 +6,11 @@ FactoryGirl.define do
     published_at Time.now
     updated_at Time.now
     summary 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, incidunt, maiores, dolorem molestiae repellendus sapiente consequatur voluptatibus veniam soluta sit dicta a tempora ex aut quasi quidem quia iusto quisquam!'
-    permalink 'lorem-ipsum'
+    featured true
+    keywords nil
     cover_url nil
+    font nil
+    permalink 'lorem-ipsum'
     association :author, factory: :user
     category
   end

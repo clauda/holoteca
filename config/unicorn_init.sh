@@ -11,10 +11,9 @@
 ### END INIT INFO
 
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT="/var/www/holoteca/current"
-DESC="Unicorn app for $USER"
+APP_ROOT="/var/www/holoteca"
 PID="$APP_ROOT/shared/pids/unicorn.holoteca.pid"
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+CMD="cd $APP_ROOT/current; bundle exec unicorn -D -c $APP_ROOT/current/config/unicorn.rb -E production"
 AS_USER="claudia"
 set -u
 

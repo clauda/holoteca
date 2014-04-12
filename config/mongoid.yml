@@ -72,7 +72,11 @@ test:
 production:
   sessions:
     default:
-      uri: hololololo
+      database: hololololo
+      # Provides the hosts the default session can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - 0.0.0.0:27017
 
 staging:
   sessions:

@@ -19,7 +19,8 @@ describe Admin::ArticlesController do
       title: 'Holo Bizarro',
       body: 'Lorem Ipsum',
       summary: 'Bacon Ipsum',
-      tags: 'lorem,ipsum'
+      tags: 'lorem,ipsum',
+      featured: true,
     } }
 
     it 'should be created' do

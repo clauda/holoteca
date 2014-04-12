@@ -50,7 +50,7 @@
 
   <footer class="entry-footer">
     <div>
-      <% if @resource.font %><p>Fonte: <%= link_to @resource.font, @resource.font %></p><br /><% end %>
+      <% unless @resource.font.nil? or @resource.font.blank? %><p>Fonte: <%= link_to @resource.font, @resource.font %></p><br /><% end %>
       <% @resource.tags.each do |tag| %>
         <span class="block-title">
         <%= link_to tag_path(tag), rel: 'tag' do %>

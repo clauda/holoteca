@@ -2,10 +2,10 @@ class Admin::ArticlesController < InheritedResources::Base
   include Cacheable
 
   before_filter :authenticate_user!
-  after_filter :expire_modules,   only: [ :create, :update ]
+  after_filter :expire_modules,   only: [ :create, :update, :destroy ]
   after_filter :expire_resource,  only: [ :update ]
 
-  caches_action :index, :show
+  caches_action :index
 
   defaults finder: :by_slug
   layout 'admin'
@@ -18,10 +18,7 @@ class Admin::ArticlesController < InheritedResources::Base
   def create
     resource = Article.new permitted_params[:article]
     resource.taggify params[:article][:tags]
-    create! do |success, failure|
-      success.html { redirect_to admin_articles_path, notice: 'Artigo Salvo!' }
-      failure.html { redirect_to admin_articles_path, alert: 'Deu pau!' }
-    end
+    create!
   end
 
   def update
