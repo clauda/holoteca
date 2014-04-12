@@ -64,31 +64,32 @@ namespace :deploy do
     end
   end
 
+end
+
+namespace :unicorn do
+
   desc "Zero-downtime restart of Unicorn"
-  task :restart, except: { no_release: true } do
+  task :restart do
     run "kill -s USR2 `cat /tmp/unicorn.holoteca.pid`"
   end
 
   desc "Start unicorn"
-  task :start, except: { no_release: true } do
+  task :start do
     run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
   end
 
   desc "Stop unicorn"
-  task :stop, except: { no_release: true } do
+  task :stop do
     run "kill -s QUIT `cat /tmp/unicorn.holoteca.pid`"
   end
 
+  # %w[start stop restart].each do |command|
+  #   desc "#{command} unicorn server"
+  #   task command do
+  #     on roles(:app), in: :sequence, wait: 5 do
+  #       execute "/etc/init.d/unicorn", command #{command}"
+  #     end
+  #   end
+  # end
 end
-
-# namespace :unicorn do
-#   %w[start stop restart].each do |command|
-#     desc "#{command} unicorn server"
-#     task command do
-#       on roles(:app), in: :sequence, wait: 5 do
-#         execute "/etc/init.d/unicorn", command #{command}"
-#       end
-#     end
-#   end
-# end
 
