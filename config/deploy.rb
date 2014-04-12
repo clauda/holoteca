@@ -70,17 +70,23 @@ namespace :unicorn do
 
   desc "Zero-downtime restart of Unicorn"
   task :restart do
-    run "kill -s USR2 `cat /tmp/unicorn.holoteca.pid`"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "kill -s USR2 `cat /tmp/unicorn.holoteca.pid`"
+    end
   end
 
   desc "Start unicorn"
   task :start do
-    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "cd #{current_path} ; bundle exec unicorn -c config/unicorn.rb -D"
+    end
   end
 
   desc "Stop unicorn"
   task :stop do
-    run "kill -s QUIT `cat /tmp/unicorn.holoteca.pid`"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "kill -s QUIT `cat /tmp/unicorn.holoteca.pid`"
+    end
   end
 
   # %w[start stop restart].each do |command|
