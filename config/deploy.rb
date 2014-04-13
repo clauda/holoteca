@@ -1,8 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-load 'deploy/assets'
-
 set :application, 'holoteca'
 set :repo_url, 'git@github.com:krawdyah/holoteca.git'
 set :branch, 'master'
