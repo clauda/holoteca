@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
   }
 
   if Rails.env.production?
-    config.fog_directory  =  'holozone.staging'                    # required
-  else
-    config.fog_directory  =  'holozone'                   # required
+    config.fog_directory  =  'holozone'
+  elsif Rails.env.staging?
+    config.fog_directory  =  'holozone.staging'
   end
 
   config.storage              = :grid_fs
