@@ -9,7 +9,7 @@
 
 ### Setup
 
-Dependecies rmagikc, libpng, pngquant, jpegoptim, optpng.
+Dependecies rmagick, libpng, pngquant, jpegoptim, optpng.
 
 Some environment variables.
 
@@ -18,7 +18,6 @@ Some environment variables.
  bundle install
  rake db:setup
  foreman start
-
 ```
 
 ### Staging
@@ -28,7 +27,6 @@ On heroku staging.holoteca.com.br
 ```
 git remote add staging git@heroku.com:holoteca.git
 git push staging master
-
 ```
 
 
@@ -38,6 +36,5 @@ Hosted on DigitalOcean
 
 ```
 cap production deploy
-
 ```
 

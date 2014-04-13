@@ -247,13 +247,14 @@ main {
 #bottom {
 	color: #888;
 	background-color: #eee;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 12px;
+	padding-bottom: 10px;
 	font-size: 13px;
 	border-top: 1px solid #eee;
 }
 #bottom .footer2 {
 	text-align: right;
+	margin-top: 8px;
 }
 
 
