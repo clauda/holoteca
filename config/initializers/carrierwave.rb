@@ -6,13 +6,13 @@ CarrierWave.configure do |config|
     :region                 => 'sa-east-1'                  # optional, defaults to 'us-east-1'
     # :path_style             => true
     # :host                   => 's3.example.com',             # optional, defaults to nil
-    # :endpoint               => 'https://s3.example.com:8080' # optional, defaults to nil
+    # :endpoint               => 'http://holozone.staging.s3-website-sa-east-1.amazonaws.com' # optional, defaults to nil
   }
 
   if Rails.env.production?
     config.fog_directory  =  'holozone'
   elsif Rails.env.staging?
-    config.fog_directory  =  'holozone.staging'
+    config.fog_directory  =  'zonestaging'
   end
 
   config.storage              = :grid_fs
