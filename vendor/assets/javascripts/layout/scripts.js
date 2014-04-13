@@ -1,14 +1,4 @@
-$(document).ready(function(){
-	// var $page = $('#mainmenu').data('page');
-	// if (!!$page){
-	// 	var $item = $('.menu-item[data-item='+$page+']');
-	// 	if (!!$item){ $item.addClass('current-menu-item'); }
-	// 	else { $('.menu-item').first().addClass('current-menu-item'); }
-	// } else { $('.menu-item').first().addClass('current-menu-item'); }
-});
-
 (function ($) {
-
 	"use strict";
 
 	$(function() {
@@ -22,7 +12,6 @@ $(document).ready(function(){
 
 		/**
 		 * submenu indicator & fade animation
-		 */
 		$('#mainmenu > li:has(ul) > a').addClass('parent').append('<i class="fa fa-angle-down"></i>');
 		$('#mainmenu ul li:has(ul) > a').addClass('parent').append('<i class="fa fa-angle-right"></i>');
 		$('#mainmenu li').hover(function() {
@@ -30,6 +19,7 @@ $(document).ready(function(){
 		}, function() {
 			$(this).children('ul').stop().fadeOut('fast');
 		});
+		 */
 
 		/**
 		 * add select menu for mainmenu
@@ -53,7 +43,6 @@ $(document).ready(function(){
 				});
 			})
 		});
-		 */
 		 	var container = document.querySelector('.masonry-container');
 		 	if(container){
 				var msnry = new Masonry( container, {
@@ -61,16 +50,17 @@ $(document).ready(function(){
 				  itemSelector: 'article'
 				});
 			};
+		*/
 
 		/**
 		 * add prettyPhoto call if plugin included
-		 */
 		if ($.fn.prettyPhoto) {
 			$("a[rel^='prettyPhoto']").prettyPhoto({
 				theme: 'pp_default',
 				social_tools: false
 			});
 		}
+		 */
 
 		/**
 		 * contact widget validation and submit action

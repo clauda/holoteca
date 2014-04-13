@@ -1,23 +1,12 @@
 <div id="sidebar" class="rs col-md-4">
   <ul>
-    <!--  TODO: search
-    <li id="search-6" class="widget widget_search">
-      <form action="http://demo.gawibowo.com/entrance/" class="searchform" method="get" role="search">
-        <div class="clearfix">
-          <input type="text" class="s" name="s" placeholder="Search...">
-          <button type="submit" class="searchsubmit"><i class="fa fa-search"></i></button>
-        </div>
-      </form>
+
+    <%= render partial: 'shared/featured', locals: { resources: @featured } if @featured %>
+    <%= render partial: 'shared/featured', locals: { resources: @related } if @related %>
+
+    <li class='fb'>
+      <div class="fb-like-box" data-href="https://www.facebook.com/HolotecaHQ" data-width="290" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
     </li>
-    -->
-
-  <%= render partial: 'shared/featured', locals: { resources: @featured } if @featured %>
-  <%= render partial: 'shared/featured', locals: { resources: @related } if @related %>
-
-  <li class='fb'>
-    <div class="fb-like-box" data-href="https://www.facebook.com/HolotecaHQ" data-width="290" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-  </li>
-
 
   <% cache('lastest_posts', skip_digest: true) do %>
     <li id="g7_posts-12" class="widget widget_g7_posts">
@@ -44,7 +33,7 @@
 
     <li>
       <a class="twitter-timeline" href="https://twitter.com/Holoteca" data-widget-id="454256714292809729">Tweets by @Holoteca</a>
-      <script src="//platform.twitter.com/widgets.js"></script>
+      <script async src="//platform.twitter.com/widgets.js"></script>
     </li>
 
     <li>

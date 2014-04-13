@@ -31,6 +31,6 @@ initializeFacebookSDK = ->
   FB.init
     appId     : '446744068790146'
     channelUrl: '//www.holoteca.com.br'
-    status    : true
+    status    : false
     cookie    : true
     xfbml     : true

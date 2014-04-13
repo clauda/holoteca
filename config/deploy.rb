@@ -1,6 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
+load 'deploy/assets'
+
 set :application, 'holoteca'
 set :repo_url, 'git@github.com:krawdyah/holoteca.git'
 set :branch, 'master'
@@ -78,7 +80,7 @@ namespace :unicorn do
   desc "Start unicorn"
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{current_path} ; bundle exec unicorn -c config/unicorn.rb -D"
+      execute "cd #{current_path} ; unicorn -c config/unicorn.rb -D"
     end
   end
 

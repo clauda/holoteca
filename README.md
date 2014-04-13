@@ -20,3 +20,24 @@ Some environment variables.
  foreman start
 
 ```
+
+### Staging
+
+On heroku staging.holoteca.com.br
+
+```
+git remote add staging git@heroku.com:holoteca.git
+git push staging master
+
+```
+
+
+### Production
+
+Hosted on DigitalOcean
+
+```
+cap production deploy
+
+```
+
