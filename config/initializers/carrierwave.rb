@@ -3,8 +3,8 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',                        # required
     :aws_access_key_id      => ENV['AWS_KEY_ID'],                     # required
     :aws_secret_access_key  => ENV['AWS_SECRET'],                        # required
-    :region                 => 'sa-east-1',                  # optional, defaults to 'us-east-1'
-    :path_style             => true
+    :region                 => 'sa-east-1'                  # optional, defaults to 'us-east-1'
+    # :path_style             => true
     # :host                   => 's3.example.com',             # optional, defaults to nil
     # :endpoint               => 'https://s3.example.com:8080' # optional, defaults to nil
   }
