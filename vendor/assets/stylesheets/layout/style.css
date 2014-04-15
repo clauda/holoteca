@@ -251,6 +251,7 @@ main {
 	padding-bottom: 10px;
 	font-size: 13px;
 	border-top: 1px solid #eee;
+	height: 64px;
 }
 #bottom .footer2 {
 	text-align: right;

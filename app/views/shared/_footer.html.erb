@@ -7,18 +7,29 @@
         <div class="col-md-4">
           <div class="widget widget_text">
             <div class="textwidget">
-              <p><%= image_tag 'logos/logo-white-blank-holoteca-fs8.png', size: 30, alt: 'Holoteca' %></p>
-              <p>Praesent ac ipsum at ipsum consectetur ornare vitae quis nisi. Proin et ultricies dolor aliquam non quisque interdum, metus ut posuere aliquet, elit arcu lacinia ipsum.</p>
+              <p><%= link_to image_tag('logos/logo-white-blank-holoteca-fs8.png', size: 30, alt: 'Holoteca'), root_path, title: 'Holoteca' %></p>
+              <p>
+                <b>holo-</b> | <i>pref.</i> do grego: significa inteiro, todo.<br />
+                <b>-teca</b> |é| <i>suf.</i> do latim: coleção ou local de armazenamento.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="col-md-4">
           <ul class='links'>
-            <li><%= link_to 'Política de Privacidade', privacy_path, title: 'Política de Privacidade' %></li>
+            <li>
+              <p>Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências, notícias em uma grande coleção.</p>
+            </li>
           </ul>
         </div>
+
         <div class="col-md-4">
+          <ul class='links'>
+            <li><%= link_to 'Início', root_path, title: 'Página Inicial do Holoteca' %></li>
+            <li><%= link_to 'Política de Privacidade', privacy_path, title: 'Política de Privacidade' %></li>
+            <li><a href="mailto:contato@holoteca.com.br">Contato</a></li>
+          </ul>
         </div>
       </div>
     </div>
