@@ -10,9 +10,9 @@ SitemapGenerator::Sitemap.include_root = false
 SitemapGenerator::Sitemap.create do
   add root_path, changefreq: 'hourly', priority: 1.0
 
-  Category.all.each do |category|
-    add_to_index "sitemaps/#{category.to_param}.xml.gz"
-  end
+  # Category.all.each do |category|
+  #   add_to_index "sitemaps/#{category.to_param}.xml.gz"
+  # end
 
   Article.visible.each do |article|
     add(article_path(article), news: {

@@ -14,7 +14,7 @@ module SeoHelper
   end
 
   def metatag(property, content = nil, type = 'name')
-    default = content ? content : HOLO['meta'][property]
+    default = content ? content : ''
     content_for :metatags do
       raw "   <meta #{type}='#{property}' content='#{default}' /> \n"
     end
