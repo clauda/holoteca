@@ -1039,6 +1039,8 @@ article.page > .entry-footer {
 }
 #sidebar li {
 	margin-bottom: 20px;
+	position: relative;
+	z-index: 9;
 }
 
 #sidebar li > ul.lastest li { margin-bottom: 0; }
@@ -1077,7 +1079,7 @@ article.page > .entry-footer {
 #wrapper .widget:last-child {
 	margin-bottom: 0;
 }
-.fb { min-height: 200px; }
+.fb { min-height: 200px; max-height: 300px; height: 250px; }
 .fb-like { float: left }
 .widget ul > li {
 	padding: 5px 0;

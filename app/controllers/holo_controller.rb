@@ -13,6 +13,7 @@ class HoloController < ApplicationController
     return render_404 unless @resource and @resource.published?
 
     @related = Article.related @resource.tags.pluck(:name), @resource.id
+    @featured = @resource.category.articles.lastest.limit(5) if @related.empty?
     fresh_when etag: @resource, last_modified: @resource.published_at.utc, public: true
   end
 
@@ -25,6 +26,7 @@ class HoloController < ApplicationController
   def tag
     @resource = Tag.includes(:articles).by_slug(params[:id])
     @related = Article.related [@resource.name], ''
+    @featured = @resource.category.articles.lastest.limit(5) if @related.empty?
     fresh_when etag: @resource, public: true
   end
 
