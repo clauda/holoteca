@@ -937,6 +937,7 @@ h4.block-heading {
 }
 .posts article {
 	margin-bottom: 30px;
+	max-height: 300px;
 }
 h1.page-title {
 	font-weight: 300;

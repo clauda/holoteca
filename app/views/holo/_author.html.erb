@@ -28,7 +28,7 @@
 
       <% unless resource.gplus.blank? %>
       <li class="social-google">
-        <%= link_to url_for(resource.gplus), target: '_blank', title: 'Google Plus' do %>
+        <%= link_to "#{url_for(resource.gplus)}?rel=author", target: '_blank', title: 'Google Plus' do %>
           <span class="social-box">
             <i class="fa fa-google-plus"></i>
           </span>
