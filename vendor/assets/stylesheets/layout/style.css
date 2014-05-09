@@ -419,6 +419,7 @@ ul.featured li { margin-bottom: 14px }
 }
 .featured img {
 	transition: all 1s ease 0s;
+	width: 100%;
 }
 .row.featured .post > a:hover img {
 	transform: scale(1.2);

@@ -19,3 +19,9 @@
  */
 
 .no-gutter { padding: 0 !important; }
+
+@media (max-width: 991px) {
+  .no-gutter {
+    padding: 0 20px
+  }
+}
