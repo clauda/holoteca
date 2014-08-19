@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::ArticlesController do
+describe Admin::ArticlesController, type: :controller do
   let(:user){ FactoryGirl.create :user }
   before { sign_in user }
 
@@ -32,7 +32,7 @@ describe Admin::ArticlesController do
   describe "GET 'new'" do
     it "returns http success" do
       get :new
-      response.should be_success
+      expect(response).to be_success
     end
   end
 

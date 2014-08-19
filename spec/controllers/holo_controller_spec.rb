@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HoloController do
+describe HoloController, type: :controller do
   context 'has articles' do
 
     describe "GET 'index'" do

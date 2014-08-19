@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::DashboardController do
+describe Admin::DashboardController, type: :controller do
   let(:user){ FactoryGirl.create :user }
 
   describe "GET 'index'" do

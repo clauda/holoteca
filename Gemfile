@@ -59,7 +59,7 @@ end
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 2.14'
+  gem 'rspec-rails', '~> 3.0'
   gem 'mongoid-rspec'
   gem 'simplecov', require: false
   gem 'factory_girl_rails'

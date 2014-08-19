@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::CategoriesController do
+describe Admin::CategoriesController, type: :controller do
   let(:user){ FactoryGirl.create :user }
   before { sign_in user }
 

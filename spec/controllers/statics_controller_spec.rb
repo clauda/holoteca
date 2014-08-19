@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe StaticsController do
+describe StaticsController, type: :controller do
 
   describe "GET 'privacy'" do
     it "returns http success" do
       get 'privacy'
-      response.should be_success
+      expect(response).to be_success
     end
   end
 
