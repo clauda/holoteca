@@ -1,0 +1,46 @@
+<section class="content-header">
+  <h1>Séries <small>Todas</small></h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-danger">
+        <div class="box-header">
+            <h3 class="box-title">Séries</h3>
+            <div class="box-tools">
+              <%= link_to 'Nova Série', new_admin_book_path, class: 'btn btn-sm btn-default pull-right' %>
+            </div>
+        </div>
+
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>Título</th>
+              <th>Artigos</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+            <% collection.each do |resource| %>
+              <tr>
+                <td><%= link_to resource.title, admin_book_path(resource) %></td>
+                <td><%= resource.articles.size %> capítulos</td>
+                <td><%= date_for resource.updated_at %></td>
+                <td><%= label_for resource.published %></td>
+                <td>
+                  <div class="btn-group">
+                    <%= link_to raw('<i class="fa fa-external-link"></i>'), book_path(resource), class: 'btn btn-sm btn-default', title: 'Ver no Site' %>
+                    <%= link_to raw('<i class="fa fa-edit"> Editar </i>'), edit_admin_book_path(resource), class: 'btn btn-sm btn-default' %>
+                    <%= link_to raw('<i class="fa fa-plus"></i> Capítulo'), chapter_admin_book_path(resource), class: 'btn btn-sm btn-default' %>
+                    <%= link_to raw('<i class="fa fa-times"> Remover</i>'), admin_book_path(resource), class: 'btn btn-sm btn-default', method: :delete, data: { confirm: 'Tem certeza?' } %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

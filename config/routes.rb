@@ -10,6 +10,9 @@ Holoteca::Application.routes.draw do
     resources :archives, only: [ :index, :create ]
     resources :categories, only: [ :index, :create ]
     resources :articles
+    resources :books do
+      get :chapter, on: :member
+    end
   end
 
   get 'privacidade', to: 'statics#privacy', as: :privacy
@@ -17,7 +20,8 @@ Holoteca::Application.routes.draw do
   get '/uploads/archives/:id/:filename', to: 'archives#image'
   get '/tag/:id',    to: 'holo#tag',      as: :tag
   get '/autor/:id',  to: 'holo#author',   as: :author
-  get '/holos/:id',  to: 'holo#category', as: :category
+  get '/categoria/:id',  to: 'holo#category', as: :category
+  get '/seriado/:id',  to: 'holo#serie',    as: :book
   get ':article_id', to: 'holo#article',  as: :article
 
   root to: 'holo#index'

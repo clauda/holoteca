@@ -26,7 +26,7 @@ class HoloController < ApplicationController
   def tag
     @resource = Tag.includes(:articles).by_slug(params[:id])
     @related = Article.related [@resource.name], ''
-    @featured = @resource.category.articles.lastest.limit(5) if @related.empty?
+    @featured = @resource.articles.lastest.limit(5) if @related.empty?
     fresh_when etag: @resource, public: true
   end
 

@@ -15,11 +15,12 @@ class Article
   field :font,        type: String
   field :keywords,    type: Array
 
-  validates :title, :body, :summary, :category, :author, presence: true
+  validates :title, :body, :summary, :author, presence: true
   validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }
 
   belongs_to :author, class_name: 'User', index: true, touch: true
   belongs_to :category, index: true, touch: true
+  belongs_to :book, index: true, touch: true
 
   alias_attribute :name, :title
 

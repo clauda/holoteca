@@ -37,6 +37,12 @@
       </li>
 
       <li data-controller='files'>
+        <%= link_to admin_books_path do %>
+          <i class="fa fa-book"></i> <span>Séries</span>
+        <% end %>
+      </li>
+
+      <li data-controller='files'>
         <%= link_to admin_archives_path do %>
           <i class="fa fa-picture-o"></i> <span>Imagens</span>
         <% end %>

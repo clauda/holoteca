@@ -14,4 +14,4 @@ User.create(
 
 %w(Viagem Tecnologia Entretenimento Saúde Arte).each { |category| Category.create name: category }
 
-# User.create(name: 'Riane Brito', email: 'riane.brito@gmail.com', password: 'senha.riane', password_confirmation: 'senha.riane', role: 'guest')
+# User.create(name: 'Natália Nunes', email: 'nunesnatalian@gmail.com', password: 'senha.natalia', password_confirmation: 'senha.natalia', role: 'admin')
