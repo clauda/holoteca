@@ -8,7 +8,7 @@ Holoteca::Application.routes.draw do
   namespace :admin do
     root to: 'dashboard#index'
     resources :archives, only: [ :index, :create ]
-    resources :categories, only: [ :index, :create ]
+    resources :categories, only: [ :index, :create, :edit, :update ]
     resources :articles
   end
 

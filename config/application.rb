@@ -21,7 +21,7 @@ module Holoteca
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("vendor" "assets", "images")
 
-    config.cache_store = :redis_store, ENV['REDIS_URL'], { expires_in: 90.minutes }
+    config.cache_store = :redis_store, ENV['REDIS_URL'], { expires_in: 60.minutes }
     config.static_cache_control = 'public, max-age=2592000'
     config.action_dispatch.rack_cache = true
 
