@@ -19,4 +19,11 @@ describe Admin::CategoriesController, type: :controller do
     end
   end
 
+  describe "POST 'update'" do
+    it 'should be updated' do
+      post :create, category: { name: 'Holo Bizarro Editado' }
+      expect(response).to be_redirect
+    end
+  end
+
 end
