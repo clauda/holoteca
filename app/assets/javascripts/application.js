@@ -1,7 +1,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require layout/jquery.easing.1.3
 //= require layout/jquery.flexslider-min
 //= require layout/jquery.mobilemenu
@@ -11,7 +10,7 @@
 //= require components/facebook
 //
 
-Turbolinks.enableTransitionCache();
+// Turbolinks.enableTransitionCache();
 
 $(document).on('page:change', function(){
   if(window.Shareaholic){ Shareaholic.init_apps(); };

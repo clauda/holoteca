@@ -20,13 +20,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <%= csrf_meta_tags %>
 
-    <script async type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
     <script type='text/javascript'>
       var googletag = googletag || {};
       googletag.cmd = googletag.cmd || [];
     </script>
-
 
     <script type="text/javascript">
       (function() {
@@ -85,7 +84,7 @@
       <%= render 'shared/footer' %>
     </div>
 
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application" %>
     <%= render 'shared/shareholic' %>
 
     <script type="text/javascript">
