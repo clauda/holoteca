@@ -1,9 +1,9 @@
 <%
   seo [
-    { property: 'description', content: @resource.name },
+    { property: 'description', content: "O Holoteca é uma revista sobre diversos assuntos. Encontre tudo sobre #{@resource.name} aqui." },
     { property: 'og:title', content: @resource.name, type: 'property' },
     { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
-    { property: 'og:description', content: @resource.name, type: 'property' }
+    { property: 'og:description', content: "O Holoteca é uma revista sobre diversos assuntos. Encontre tudo sobre #{@resource.name} aqui.", type: 'property' }
   ]
   title "#{@resource.name} / Holoteca"
 %>
