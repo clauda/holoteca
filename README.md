@@ -38,3 +38,12 @@ Hosted on DigitalOcean
 cap production deploy
 ```
 
+#### Troubleshooting
+
+Unicorn start
+
+```
+bundle exec unicorn -c config/unicorn.rb -D
+```
+
+

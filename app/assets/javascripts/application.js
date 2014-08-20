@@ -16,4 +16,5 @@ Turbolinks.enableTransitionCache();
 $(document).on('page:change', function(){
   if(window.Shareaholic){ Shareaholic.init_apps(); };
   if(window.ga){ ga('send', 'pageview'); };
+  if(googletag){ googletag.pubads().refresh() };
 });
