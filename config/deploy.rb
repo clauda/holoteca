@@ -11,7 +11,7 @@ set :user, 'claudia'
 set :ssh_options, { port: 5953, forward_agent: true }
 set :use_sudo, false
 
-set :rvm1_ruby_version, '2.1.1'
+set :rvm1_ruby_version, '2.1.3'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
