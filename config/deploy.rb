@@ -48,7 +48,6 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
@@ -56,11 +55,12 @@ namespace :deploy do
   desc 'Refresh sitemaps'
   task :sitemaps do
     on roles(:web), in: :sequence, wait: 5 do
+      execute "cd #{current_path}"
       rake 'sitemap:refresh'
     end
   end
 
-  after :published, :sitemaps
+  before :published, :sitemaps
   after :finishing, :cleanup
   before :finished, :restart
   after :rollback, :restart
@@ -69,7 +69,8 @@ end
 namespace :cache do
 
   task :clear do
-    with rails_env: :production do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "cd #{current_path}"
       rake 'cache:clear'
     end
   end
@@ -88,7 +89,7 @@ namespace :unicorn do
   desc "Stop unicorn"
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "kill -s QUIT `cat /var/www/holoteca/shared/unicorn.holoteca.pid`"
+      execute "kill -s QUIT `cat /var/www/holoteca/shared/pids/unicorn.holoteca.pid`"
     end
   end
 
