@@ -57,7 +57,7 @@ namespace :deploy do
   task :sitemaps do
     on roles(:app), in: :sequence, wait: 5 do
       # Generate sitemaps
-      execute "bundle exec rake sitemap:refresh"
+      execute "cd #{current_path}; bundle exec rake sitemap:refresh"
     end
   end
 
