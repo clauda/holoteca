@@ -61,9 +61,9 @@ namespace :deploy do
     end
   end
 
+  after :published, :sitemaps
   after :finishing, :cleanup
   before :finished, :restart
-  after :finished, :sitemaps
   after :rollback, :restart
 end
 
@@ -81,13 +81,6 @@ namespace :cache do
 end
 
 namespace :unicorn do
-
-  desc "Zero-downtime restart of Unicorn"
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute "kill -s USR2 `cat /tmp/unicorn.holoteca.pid`"
-    end
-  end
 
   desc "Start unicorn"
   task :start do
