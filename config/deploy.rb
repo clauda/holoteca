@@ -55,7 +55,11 @@ namespace :deploy do
 
   desc 'Refresh sitemaps'
   task :sitemaps do
-    %x('RAILS_ENV=production bundle exec rake sitemap:refresh')
+    run_locally do
+      with rails_env: :development do
+        rake 'sitemap:refresh'
+      end
+    end
   end
 
   after :published, :sitemaps
@@ -67,7 +71,11 @@ end
 namespace :cache do
 
   task :clear do
-    %x('RAILS_ENV=production bundle exec rake cache:clear')
+    run_locally do
+      with rails_env: :development do
+        rake 'cache:clear'
+      end
+    end
   end
 
 end
