@@ -55,10 +55,7 @@ namespace :deploy do
 
   desc 'Refresh sitemaps'
   task :sitemaps do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Generate sitemaps
-      execute "cd #{current_path}; bundle exec rake sitemap:refresh"
-    end
+    %x('RAILS_ENV=production bundle exec rake sitemap:refresh')
   end
 
   after :published, :sitemaps
@@ -70,12 +67,7 @@ end
 namespace :cache do
 
   task :clear do
-    on roles(:web), in: :squence, wait: 10 do
-      # Here we can do anything such as:
-      within release_path do
-        execute "cd #{current_path}; bundle exec rake cache:clear"
-      end
-    end
+    %x('RAILS_ENV=production bundle exec rake cache:clear')
   end
 
 end
@@ -92,7 +84,7 @@ namespace :unicorn do
   desc "Stop unicorn"
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "kill -s QUIT `cat /tmp/unicorn.holoteca.pid`"
+      execute "kill -s QUIT `cat /var/www/holoteca/shared/unicorn.holoteca.pid`"
     end
   end
 
