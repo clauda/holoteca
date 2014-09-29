@@ -54,7 +54,13 @@ namespace :deploy do
 
   desc 'Refresh sitemaps'
   task :sitemaps do
-    execute "cd #{current_path}; bundle exec rake sitemap:refresh"
+    on roles(:app) do
+      within "#{current_path}" do
+        with rails_env: :production do
+          execute :rake, "sitemap:refresh"
+        end
+      end
+    end
   end
 
   before :published, :sitemaps
@@ -66,7 +72,13 @@ end
 namespace :cache do
 
   task :clear do
-    execute "cd #{current_path}; bundle exec rake cache:clear"
+    on roles(:app) do
+      within "#{current_path}" do
+        with rails_env: :production do
+          execute :rake, "cache:clear"
+        end
+      end
+    end
   end
 
 end
@@ -75,7 +87,13 @@ namespace :unicorn do
 
   desc "Start unicorn"
   task :start do
-    execute "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -D"
+    on roles(:app) do
+      within "#{current_path}" do
+        with rails_env: :production do
+          execute "bundle exec unicorn -c config/unicorn.rb -D"
+        end
+      end
+    end
   end
 
   desc "Stop unicorn"
