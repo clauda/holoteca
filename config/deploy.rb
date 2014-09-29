@@ -55,10 +55,8 @@ namespace :deploy do
 
   desc 'Refresh sitemaps'
   task :sitemaps do
-    run_locally do
-      with rails_env: :development do
-        rake 'sitemap:refresh'
-      end
+    on roles(:web), in: :sequence, wait: 5 do
+      rake 'sitemap:refresh'
     end
   end
 
@@ -71,10 +69,8 @@ end
 namespace :cache do
 
   task :clear do
-    run_locally do
-      with rails_env: :development do
-        rake 'cache:clear'
-      end
+    with rails_env: :production do
+      rake 'cache:clear'
     end
   end
 
