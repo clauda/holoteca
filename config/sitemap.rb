@@ -3,27 +3,17 @@ require 'sitemap_generator'
 
 SitemapGenerator::Sitemap.default_host = 'http://holoteca.com.br'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps'
-SitemapGenerator::Sitemap.create_index = true
+SitemapGenerator::Sitemap.create_index = false
 SitemapGenerator::Sitemap.include_index = false
 SitemapGenerator::Sitemap.include_root = false
 
 SitemapGenerator::Sitemap.create do
   add root_path, changefreq: 'hourly', priority: 1.0
-
-  # Category.all.each do |category|
-  #   add_to_index "sitemaps/#{category.to_param}.xml.gz"
-  # end
+  add contact_path, changefreq: 'monthly'
+  add privacy_path, changefreq: 'monthly'
 
   Article.visible.each do |article|
-    add(article_path(article), news: {
-      publication_name: 'Holoteca',
-      publication_language: 'pt',
-      title: article.title,
-      keywords: article.taggable,
-      publication_date: article.published_at.to_date,
-      genres: 'Blog'
-    })
-
+    add article_path(article), priority: 1.0, lastmod: article.updated_at
   end
 end
 
@@ -36,6 +26,11 @@ Category.includes(:articles).all.each do |category|
       add article_path(article), lastmod: article.published_at
     end
   end
+end
+
+Tag.includes(:articles).all.each do |tag|
+  SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new tag.to_param.to_sym
+  add tag_path(tag), changefreq: 'hourly', priority: 0.9
 end
 
 SitemapGenerator::Sitemap.ping_search_engines
