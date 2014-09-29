@@ -1,0 +1,35 @@
+<%
+  seo [
+    { property: 'description', content: 'Anuncie - Fale Conosco - O Holoteca possui artigos dos mais diversos. Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências em uma grande coleção.' },
+    { property: 'og:title', content: 'Anuncie - Fale Conosco - Holoteca', type: 'property' },
+    { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
+    { property: 'og:description', content: 'Anuncie - Fale Conosco - O Holoteca possui artigos dos mais diversos. Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências em uma grande coleção.', type: 'property' }
+  ]
+  title "Anuncie - Fale Conosco / Holoteca"
+%>
+
+<article class='page'>
+  <header class="archive-header">
+    <h1 class="page-title">Anuncie</h1>
+  </header>
+
+  <% cache 'contact-us' do %>
+  <div class='posts'>
+    <h3>Anuncie</h3>
+
+    <p>Anunciantes devem entrar em contato pelo email <a href="mailto:anuncie@holoteca.com.br">anuncie@holoteca.com.br</a> para maiores informações.</p>
+
+    <h3>Seja um Colunista</h3>
+
+    <p>A Holoteca procura por colunistas, jornalistas, redatores, blogueiros e outros colaboradores interessados em escrever matérias sobre diversos temas como entretenimento, saúde, viagem, arte, política, tecnologia, crônicas, entre outras. </p>
+
+    <p>Faça parte da nossa equipe de colunistas. Mande um email para <a href="mailto:colunistas@holoteca.com.br">colunistas@holoteca.com.br</a>.</p>
+
+
+    <h3>Fale Conosco</h3>
+
+    <p>Para tirar dúvidas, ou enviar correçõs e mandar sugestões de matérias e usabilidade, entre em contato conosco: <a href="mailto:contato@holoteca.com.br">contato@holoteca.com.br</a></p>
+  </div>
+  <% end %>
+
+</article>

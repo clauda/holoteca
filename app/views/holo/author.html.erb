@@ -1,6 +1,6 @@
 <%
   seo [
-    { property: 'description', content: @resource.name },
+    { property: 'description', content: "#{@resource.name}. #{@resource.try(:description)}" },
     { property: 'og:title', content: @resource.about, type: 'property' },
     { property: 'og:image', content: gravatar_url(@resource.email), type: 'property' },
     { property: 'og:description', content: @resource.about, type: 'property' }

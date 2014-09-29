@@ -1,9 +1,9 @@
 <%
   seo [
-    { property: 'description', content: '' },
+    { property: 'description', content: 'Política de Privacidade - O Holoteca possui artigos dos mais diversos. Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências em uma grande coleção.' },
     { property: 'og:title', content: 'Política de Privacidade / Holoteca', type: 'property' },
     { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
-    { property: 'og:description', content: 'Política de Privacidade', type: 'property' }
+    { property: 'og:description', content: 'Política de Privacidade - O Holoteca possui artigos dos mais diversos. Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências em uma grande coleção.', type: 'property' }
   ]
   title "Política de Privacidade / Holoteca"
 %>
@@ -13,7 +13,7 @@
     <h1 class="page-title">Políticas de Privacidade</h1>
   </header>
 
-  <% cache do %>
+  <% cache 'privacy' do %>
   <div class='posts'>
     <p>A política de privacidade da Holoteca esclarece o nosso compromisso com a segurança da informação na internet, de como lidamos com os dados dos cliente.</p>
 
