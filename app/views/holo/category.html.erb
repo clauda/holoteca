@@ -1,6 +1,6 @@
 <%
   seo [
-    { property: 'description', content: @resource.summary },
+    { property: 'description', content: "#{@resource.name}. #{@resource.summary}" },
     { property: 'og:title', content: @resource.name, type: 'property' },
     { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
     { property: 'og:description', content: @resource.summary, type: 'property' }
