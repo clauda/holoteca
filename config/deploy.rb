@@ -41,7 +41,7 @@ set :linked_files, %w{config/mongoid.yml .env}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 2
 
 namespace :deploy do
 
@@ -49,18 +49,32 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
-  after :publishing, :restart
+  desc 'Refresh sitemaps'
+  task :sitemaps do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Generate sitemaps
+      execute "bundle exec rake sitemap:refresh"
+    end
+  end
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+  after :finishing, :cleanup
+  before :finished, :restart
+  after :finished, :sitemaps
+  after :rollback, :restart
+end
+
+namespace :cache do
+
+  task :clear do
+    on roles(:web), in: :squence, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute "cd #{current_path}; bundle exec rake cache:clear"
+      end
     end
   end
 
@@ -78,7 +92,7 @@ namespace :unicorn do
   desc "Start unicorn"
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{current_path} ; unicorn -c config/unicorn.rb -D"
+      execute "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -D"
     end
   end
 
@@ -89,13 +103,5 @@ namespace :unicorn do
     end
   end
 
-  # %w[start stop restart].each do |command|
-  #   desc "#{command} unicorn server"
-  #   task command do
-  #     on roles(:app), in: :sequence, wait: 5 do
-  #       execute "/etc/init.d/unicorn", command #{command}"
-  #     end
-  #   end
-  # end
 end
 
