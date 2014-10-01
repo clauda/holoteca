@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /admin/
-
+Allow: /
+Disallow: /admin/*
 Sitemap: http://holoteca.com.br/sitemaps/sitemap.xml.gz
