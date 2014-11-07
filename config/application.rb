@@ -45,5 +45,7 @@ module Holoteca
       generator.helper_specs false
     end
 
+    require Rails.root.join("lib/custom_public_exceptions")
+    config.exceptions_app = CustomPublicExceptions.new(Rails.public_path)
   end
 end

@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
-    :aws_access_key_id      => ENV['AWS_KEY_ID'],                     # required
-    :aws_secret_access_key  => ENV['AWS_SECRET'],                        # required
+    :aws_access_key_id      => (ENV['AWS_KEY_ID'] || 'any'),                     # required
+    :aws_secret_access_key  => (ENV['AWS_SECRET'] || 'any'),                        # required
     :region                 => 'sa-east-1'                  # optional, defaults to 'us-east-1'
     # :path_style             => true
     # :host                   => 's3.example.com',             # optional, defaults to nil
@@ -21,3 +21,4 @@ CarrierWave.configure do |config|
   config.fog_public     = true                                   # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
+

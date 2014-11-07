@@ -12,8 +12,4 @@ module SidebarTron
       @lastest = Article.includes(:category).lastest unless fragment_exist? 'lastest_posts'
     end
 
-    def raise_404
-      render_404 if @resource.nil?
-    end
-
 end
