@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.4'
+ruby '2.2.0'
 
 gem 'rails', '4.1.6'
 
@@ -39,7 +39,6 @@ gem 'whenever', require: false
 
 # Addons
 gem 'rack-mini-profiler', require: false
-gem 'dotenv-rails'
 
 group :development do
   gem 'spring'
