@@ -12,7 +12,6 @@
     <meta property="og:url" content="<%= url(request.path) %>" />
     <meta property="og:type" content="website" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= yield :stylesheets %>
 
@@ -20,42 +19,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <%= csrf_meta_tags %>
 
-    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
-    <script type='text/javascript'>
-      var googletag = googletag || {};
-      googletag.cmd = googletag.cmd || [];
-    </script>
-
-    <script type="text/javascript">
-      (function() {
-        var _fbq = window._fbq || (window._fbq = []);
-        if (!_fbq.loaded) {
-          var fbds = document.createElement('script');
-          fbds.async = true;
-          fbds.src = '//connect.facebook.net/en_US/fbds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(fbds, s);
-          _fbq.loaded = true;
-        }
-        _fbq.push(['addPixelId', '565303960253200']);
-      })();
-      window._fbq = window._fbq || [];
-      window._fbq.push(['track', 'PixelInitialized', {}]);
-    </script>
-
     <noscript><img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=565303960253200&amp;ev=NoScript" /></noscript>
-
-    <script type="text/javascript">
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=true;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-2347706-21', 'holoteca.com.br');
-      ga('require', 'linkid', 'linkid.js');
-      ga('send', 'pageview');
-    </script>
   </head>
 
   <body class='page stretched'>
@@ -63,7 +27,7 @@
 
     <% cache 'header' do %>
       <header id="top">
-        <%= link_to image_tag('logos/logo-white-blank-holoteca-fs8.png', size: '300x57', alt: 'Holoteca', class: 'logo'), root_path %>
+        <%= link_to image_tag('logos/symbol-holoteca-50.png', alt: 'Holoteca', class: 'logo'), root_path, title: 'Página Inicial da Holoteca' %>
       </header>
     <% end %>
 
@@ -84,22 +48,37 @@
       <%= render 'shared/footer' %>
     </div>
 
-    <%= javascript_include_tag "application" %>
-    <%= render 'shared/shareholic' %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <script type="text/javascript">
-      var _gauges = _gauges || [];
       (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '536d02bbeddd5b05cd0010df');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+          var fbds = document.createElement('script');
+          fbds.async = true;
+          fbds.src = '//connect.facebook.net/en_US/fbds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(fbds, s);
+          _fbq.loaded = true;
+        }
+        _fbq.push(['addPixelId', '565303960253200']);
       })();
+      window._fbq = window._fbq || [];
+      window._fbq.push(['track', 'Initialized', {}]);
     </script>
 
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=true;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-2347706-21', 'holoteca.com.br');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+    </script>
+
+    <%= javascript_include_tag "application" %>
+    <%= render 'shared/shareholic' %>
   </body>
 </html>
