@@ -14,6 +14,10 @@ class Article
   field :cover_url,   type: String
   field :font,        type: String
   field :keywords,    type: Array
+  field :meta,        type: Hash, default: { sent: false }
+
+  # metas:
+  #   sent: flag to sent article on newsletter 
 
   validates :title, :body, :summary, :category, :author, presence: true
   validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }
@@ -26,6 +30,7 @@ class Article
   scope :visible, ->{ where(published: true).order(published_at: :desc).cache }
   scope :lastest, ->{ visible.limit(8) }
   scope :featured, ->{ visible.where(featured: true).limit(8) }
+  scope :unread, ->{ visible.where(meta: { sent: false }) }
   scope :related, ->(keys, id){ visible.nin(_id: id).in(keywords: keys).limit(3).cache }
 
   before_save :publish

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <%= stylesheet_link_tag "email" %>
+  </head>
+  
+  <body>
+    <table class="body">
+      <tr>
+        <td class="center">
+          <center>
+
+            <table class="row header">
+              <tr>
+                <td valign="middle" align="center">
+                  <table class="twelve columns">
+                    <tr>
+                      <td class="center" valign="middle" align="center">
+                        <%= link_to image_tag(image_url("logos/symbol-red-blank-holoteca-60.png"), border: 0, alt: "Holoteca", class: "center logo"), root_url(utm_campaign: "newsletter", utm_term: "home", utm_content: "logo", ref: "newsletter", read: "1") %>
+                      </td>
+                      <td class="expander"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <br />
+
+            <%= yield %>
+
+            <table class="row footer">
+              <tr>
+                <td class="last" align="center">
+
+                  <hr />
+
+                  <table class="twelve columns">
+                    <tr>
+                      <td class="center" valign="middle" align="center">
+                        <center>
+                          <p class="center"><a href="http://holoteca.com.br?ref=newsletter">holoteca.com.br</a></p>
+                        </center>
+                      </td>
+                      <td class="expander"></td>
+                    </tr>
+                  </table>
+
+                </td>
+
+              </tr>
+            </table>
+
+          </center>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

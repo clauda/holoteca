@@ -1,0 +1,20 @@
+<table class="row">
+  <tr>
+    <td class="wrapper last center">
+    
+      <% @articles.each do |article| %>
+        <table class="twelve columns">
+          <tr>
+            <td class="center article">
+              <%= image_tag article.cover_url, width: '100%', alt: article.title, class: 'center cover' %>
+              <h4 class="text-pad center caption"><%= link_to article.title, article_url(article), title: article.summary %></h4>
+            </td>
+            <td class="expander"></td>
+          </tr>
+        </table>
+        <br />
+      <% end %>
+    </td>
+    <td class="expander"></td>
+  </tr>
+</table>

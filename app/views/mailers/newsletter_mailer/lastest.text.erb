@@ -1,0 +1,6 @@
+<% @articles.each do |article| %>
+  ## <%= article.title %><br />
+  <%= article.summary %>
+  <%= article_url(article) %>
+  <br />
+<% end %>

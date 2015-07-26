@@ -10,7 +10,9 @@
     <%= yield :metatags -%>
     <meta property="fb:app_id" content="446744068790146"/>
     <meta property="og:url" content="<%= url(request.path) %>" />
+    <meta property="og:site_name" content="Holoteca" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= yield :stylesheets %>

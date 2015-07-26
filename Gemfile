@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'therubyracer'
+gem 'roadie-rails', '~> 1.0.0'
 
 # Upload
 gem 'carrierwave' #, git: 'git://github.com/jnicklas/carrierwave.git'
