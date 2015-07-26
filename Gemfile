@@ -3,7 +3,7 @@ ruby '2.2.0'
 
 gem 'rails', '4.1.6'
 
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~> 4.0' # git: 'https://github.com/mongoid/mongoid.git'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
