@@ -89,7 +89,7 @@ namespace :unicorn do
     on roles(:app) do
       within "#{current_path}" do
         with rails_env: :production do
-          execute "bundle exec unicorn -c config/unicorn.rb -D"
+          execute "bundle exec unicorn -c config/unicorn.rb -E production -D"
         end
       end
     end
