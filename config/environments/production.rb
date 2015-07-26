@@ -84,7 +84,7 @@ Holoteca::Application.configure do
   config.action_mailer.smtp_settings = { 
     address: "smtp.mandrillapp.com", 
     port: 587,
-    username: "krawdyah@gmail.com",
+    user_name: "krawdyah@gmail.com",
     password: ENV["MANDRILL_KEY"]
   }
 end
