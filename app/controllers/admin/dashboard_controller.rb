@@ -1,4 +1,5 @@
 class Admin::DashboardController < ApplicationController
+  include Cacheable
   before_filter :authenticate_user!
   layout 'admin'
 
