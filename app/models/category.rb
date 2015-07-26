@@ -6,9 +6,9 @@ class Category
   field :summary,     type: String
   field :permalink,   type: String
 
-  validates :name, presence: true, uniqueness: { case_sensitive: true, messsage: 'Nome em uso.' }
-
+  index({ name: 1, permalink: 1 }, { unique: true })
+  
   has_many :articles
 
-  index({ name: 1 }, { unique: true })
+  validates :name, presence: true, uniqueness: { case_sensitive: true, messsage: 'Nome em uso.' }
 end

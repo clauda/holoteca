@@ -9,5 +9,5 @@ class Tag
 
   has_and_belongs_to_many :articles, index: true
 
-  index({ name: 1 }, { unique: true })
+  index({ name: 1, permalink: 1 }, { unique: true })
 end

@@ -19,6 +19,8 @@ class Article
   # metas:
   #   sent: flag to sent article on newsletter 
 
+  index({ title: 1, permalink: 1 }, { unique: true, drop_dups: true })
+  
   validates :title, :body, :summary, :category, :author, presence: true
   validates :title, :permalink, uniqueness: { case_sensitive: false, messsage: 'Tente outro título' }
 
