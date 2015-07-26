@@ -1,6 +1,6 @@
-# Ruby 2.1.4
+# Ruby 2.2.0
 # Ubuntu 12.05
-box: repro/reproio-box@0.0.6
+box: pharkle/ubuntu12.04-ruby2.2.0@1.0.9
 
 # Build definition
 # See the Rails section on the wercker devcenter:
