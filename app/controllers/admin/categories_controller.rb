@@ -11,7 +11,7 @@ class Admin::CategoriesController < InheritedResources::Base
     end
   end
 
-   def update
+  def update
     resource = Category.by_slug params[:id]
     resource.update_attributes permitted_params[:category]
     redirect_to admin_categories_path, notice: 'Pray!'

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6">
           <div class="widget widget_text">
             <div class="textwidget">
               <p><%= link_to image_tag('logos/brand-white.png', alt: 'Holoteca'), root_path, title: 'Holoteca' %></p>
@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6">
           <ul class='links'>
             <li><%= link_to 'Início', root_path, title: 'Página Inicial do Holoteca' %></li>
             <li><%= link_to 'Política de Privacidade', privacy_path, title: 'Política de Privacidade' %></li>
@@ -24,7 +24,7 @@
           </ul>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-12">
           <p>Receba as novidades do Holoteca</p>
           <%= form_tag(subscribe_path, method: :post, remote: true, id: 'is-subscription') do %>
             <div class="input-group">

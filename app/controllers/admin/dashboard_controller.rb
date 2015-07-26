@@ -5,6 +5,7 @@ class Admin::DashboardController < ApplicationController
 
   def index
     @articles = Article.visible
+    @subscribers = Subscriber.all
   end
 
   def clear_cache

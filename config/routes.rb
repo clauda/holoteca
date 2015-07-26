@@ -15,6 +15,7 @@ Holoteca::Application.routes.draw do
     get '/clean', to: "dashboard#clear_cache"
     resources :archives, only: [ :index, :create ]
     resources :categories, only: [ :index, :create, :edit, :update ]
+    resources :subscribers
     resources :articles
   end
 

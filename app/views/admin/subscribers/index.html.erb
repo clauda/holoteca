@@ -1,0 +1,42 @@
+<section class="content-header">
+  <h1>Newsletter <small>Painel</small></h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-danger">
+
+        <div class="box-header">
+          <h3 class="box-title">Assinantes</h3>
+        </div>
+
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>Email</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+            <% collection.each do |resource| %>
+              <tr>
+                <td><%= resource.email %></td>
+                <td>
+                  <span class='label label-<%= resource.active ? 'success' : 'default' %>'>
+                    <%= resource.active ? 'Ativo' : 'Inativo' %>
+                  </span>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <%= link_to raw('<i class="fa fa-edit"> </i>'), edit_admin_subscriber_path(resource), class: 'btn btn-sm btn-default btn-disabled' %>
+                    <%= link_to raw('<i class="fa fa-times"></i>'), admin_subscriber_path(resource), class: 'btn btn-sm btn-default', method: :delete, data: { confirm: 'Tem certeza?' } %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

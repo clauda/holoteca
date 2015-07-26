@@ -1,2 +1,1 @@
-class Admin::PasswordsController < Devise::PasswordsController
-end
+class Admin::PasswordsController < Devise::PasswordsController; end
