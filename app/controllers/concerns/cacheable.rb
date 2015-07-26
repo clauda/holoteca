@@ -19,4 +19,8 @@ module Cacheable
       expire_fragment [resource, 'featured']  # on sidebar
     end
 
+    def destroy_aaaaaaall_cache!
+      Rails.cache.clear
+    end
+
 end

@@ -56,6 +56,9 @@
             <% end %>
           </li>
           <% end %>
+          <li>
+            <%= link_to "<i class='fa fa-angle-double-right'></i> Limpar Cache".html_safe, controller: 'admin/dashboard', action: 'clear_cache', title: 'Limpa os dados na memória cache do site. Use isso sempre que precisar atualizar os dados no site.' %>
+          </li>
         </ul>
       </li>
     </ul>

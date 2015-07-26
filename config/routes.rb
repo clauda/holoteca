@@ -12,6 +12,7 @@ Holoteca::Application.routes.draw do
 
   namespace :admin do
     root to: 'dashboard#index'
+    get '/clean', to: "dashboard#clear_cache"
     resources :archives, only: [ :index, :create ]
     resources :categories, only: [ :index, :create, :edit, :update ]
     resources :articles
