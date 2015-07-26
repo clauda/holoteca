@@ -3,7 +3,11 @@ class HoloController < ApplicationController
 
   def index
     @featured_slide = Article.featured unless fragment_exist? 'featured_posts'
-    @articles = Article.includes(:category, :author).where(:id.nin => @featured_slide.pluck(:id)).visible
+    @articles = Article.includes(:category, :author).visible
+
+    if @featured_slide # prevent repeat posts
+      @articles = @articles.where(:id.nin => @featured_slide.pluck(:id))
+    end
 
     fresh_when last_modified: @articles.last.try(:published_at).try(:utc), public: true
   end

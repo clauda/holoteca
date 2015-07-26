@@ -1,5 +1,4 @@
-# config valid only for Capistrano 3.2.1
-lock '3.2.1'
+lock '3.4.0'
 
 set :application, 'holoteca'
 set :repo_url, 'git@github.com:krawdyah/holoteca.git'
@@ -11,7 +10,7 @@ set :user, 'claudia'
 set :ssh_options, { port: 5953, forward_agent: true }
 set :use_sudo, false
 
-set :rvm1_ruby_version, '2.1.4'
+set :rvm1_ruby_version, '2.2.0'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -32,7 +31,7 @@ set :rvm1_ruby_version, '2.1.4'
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/mongoid.yml .env}
+set :linked_files, %w{config/mongoid.yml}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
