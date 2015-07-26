@@ -1,18 +1,19 @@
 require 'spec_helper'
 
 describe HoloController, type: :controller do
+  let(:article){ FactoryGirl.create :article, published: true }
+  
   context 'has articles' do
 
     describe "GET 'index'" do
-      pending 'should be successful' do
+      before { article.reload }
+      it 'should be successful' do
         get :index
         expect(response).to be_success
       end
     end
 
     describe "GET 'article'" do
-      let(:article){ FactoryGirl.create :article, published: true }
-
       it 'should be successful' do
         get :article, { article_id: article.permalink }
         expect(response).to be_success

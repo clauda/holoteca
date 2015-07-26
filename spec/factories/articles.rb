@@ -10,7 +10,7 @@ FactoryGirl.define do
     keywords nil
     cover_url nil
     font nil
-    permalink 'lorem-ipsum'
+    permalink nil
     association :author, factory: :user
     category
   end

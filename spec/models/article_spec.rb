@@ -4,7 +4,12 @@ describe Article do
   subject { FactoryGirl.create :article, published: true }
   it { expect(subject).to be_valid }
 
-  pending('.by_slug') { expect(Article.by_slug('lorem-ipsum').title).to eq(subject.title) }
+  describe('.by_slug') do 
+    before { subject.reload }
+    it("find article by slug" ) { expect(Article.by_slug('lorem-ipsum').title).to eq(subject.title) }
+  end
+
+  it('.meta.sent') { expect(subject.meta[:sent]).to eql(false) }
 
   it('#to_param') { expect(subject.to_param).to eq('lorem-ipsum') }
 

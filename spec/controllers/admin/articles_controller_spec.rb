@@ -40,7 +40,7 @@ describe Admin::ArticlesController, type: :controller do
     let(:article){ FactoryGirl.create :article }
 
     pending "returns http success" do
-      get :edit, { id: article.permalink }
+      get :edit, { id: article.id }
       expect(response).to be_success
     end
   end
