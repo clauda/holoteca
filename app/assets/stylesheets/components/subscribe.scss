@@ -1,0 +1,25 @@
+#is-subscription {
+  input.subscribe {
+    border: 0;
+    box-shadow: none;
+    border-radius: 2px 0 0 2px;
+    margin: 0;
+    padding: 8px 12px;
+    float: left;
+    width: 70%;
+    height: 38px;
+  }
+
+  button.btn {
+    margin: 0;
+    border: 1px solid #fff;
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0 2px 2px 0;
+    float: left;
+    height: 38px;
+    width: 30%;
+    &:hover, &[disabled='disabled'] { background-color: #9E0d0d; }
+  }
+
+}

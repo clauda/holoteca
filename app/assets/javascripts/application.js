@@ -10,10 +10,9 @@
 //= require components/facebook
 //
 
-// Turbolinks.enableTransitionCache();
-
-$(document).on('page:change', function(){
-  if(window.Shareaholic){ Shareaholic.init_apps(); };
-  if(window.ga){ ga('send', 'pageview'); };
-  if(googletag){ googletag.pubads().refresh() };
+$(function(){
+  $("#is-subscription").on('submit', function(){
+    $('#is-subscription button').text("ASSINADO").attr('disabled', 'disabled');
+  })
 });
+

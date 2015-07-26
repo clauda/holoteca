@@ -18,19 +18,22 @@
 
         <div class="col-md-4">
           <ul class='links'>
-            <li>
-              <!-- <p>Aqui falamos sobre tudo um pouco. Atualidades, opiniões, experiências, notícias em uma grande coleção.</p> -->
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-md-4">
-          <ul class='links'>
             <li><%= link_to 'Início', root_path, title: 'Página Inicial do Holoteca' %></li>
             <li><%= link_to 'Política de Privacidade', privacy_path, title: 'Política de Privacidade' %></li>
             <li><%= link_to 'Contato', contact_path, title: 'Anuncie ou Fale Conosco' %></li>
           </ul>
         </div>
+
+        <div class="col-md-4">
+          <p>Receba as novidades do Holoteca</p>
+          <%= form_tag(subscribe_path, method: :post, remote: true, id: 'is-subscription') do %>
+            <div class="input-group">
+              <%= email_field_tag :email, nil, placeholder: 'seu@email.com.br', class: 'form-contral subscribe', required: true %>
+              <%= button_tag 'ASSINE', class: 'btn btn-danger' %>
+            </div>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>

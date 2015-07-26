@@ -16,6 +16,7 @@
  *= require layout/prettyPhoto
  *= require layout/style
  *= require layout/color
+ *= require components/subscribe
  */
 
 .no-gutter { padding: 0 !important; }

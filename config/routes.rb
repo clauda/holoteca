@@ -19,6 +19,7 @@ Holoteca::Application.routes.draw do
 
   get 'privacidade', to: 'statics#privacy', as: :privacy
   get 'anuncie', to: 'statics#contact', as: :contact
+  post 'assine', to: 'statics#subscribe', as: :subscribe
 
   get '/uploads/archives/:id/:filename', to: 'archives#image'
   get '/tag/:id',    to: 'holo#tag',      as: :tag
