@@ -2,8 +2,9 @@ class HoloController < ApplicationController
   include SidebarTron
 
   def index
-    @articles = Article.includes(:category, :author).visible.limit 9
     @featured_slide = Article.featured unless fragment_exist? 'featured_posts'
+    @articles = Article.includes(:category, :author).where(:id.nin => @featured_slide.pluck(:id)).visible.limit 9
+
     fresh_when last_modified: @articles.last.published_at.utc, public: true
   end
 
