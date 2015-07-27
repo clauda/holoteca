@@ -5,8 +5,6 @@ class Admin::ArticlesController < InheritedResources::Base
   after_filter :expire_modules,   only: [ :create, :update, :destroy ]
   after_filter :expire_resource,  only: [ :update ]
 
-  caches_action :index
-
   defaults finder: :by_slug
   layout 'admin'
 

@@ -11,8 +11,19 @@
 //
 
 $(function(){
+
   $("#is-subscription").on('submit', function(){
     $('#is-subscription button').text("ASSINADO").attr('disabled', 'disabled');
-  })
+  });
+
+  // Fix menu on top
+  // $(document).on("scroll", function() {
+  //   if ($(document).scrollTop() > 100) {
+  //     $("#mainnav").addClass("fix");
+  //   } else {
+  //     $("#mainnav").removeClass("fix");
+  //   }
+  // });
+
 });
 

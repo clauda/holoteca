@@ -19,6 +19,15 @@
  *= require components/subscribe
  */
 
+#mainnav.fix { 
+  position: fixed; 
+  top: 0; 
+  background-color: #C51010;
+  color: #fff;
+  transition: all 0.4s ease 0s; }
+
+#mainnav.fix a { color: #fff; }
+
 .no-gutter { padding: 0 !important; }
 
 @media (max-width: 991px) {
