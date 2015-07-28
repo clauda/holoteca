@@ -3,7 +3,10 @@
     { property: 'description', content: "#{@resource.name}. #{@resource.try(:about)}" },
     { property: 'og:title', content: @resource.about, type: 'property' },
     { property: 'og:image', content: gravatar_url(@resource.email), type: 'property' },
-    { property: 'og:description', content: @resource.about, type: 'property' }
+    { property: 'og:description', content: @resource.about, type: 'property' },
+    { property: 'twitter:title', content: @resource.name },
+    { property: 'twitter:description', content: @resource.about },
+    { property: 'twitter:image:src', content: gravatar_url(@resource.email) }
   ]
   title "#{@resource.name} / Holoteca"
 %>

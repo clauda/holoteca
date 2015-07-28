@@ -2,8 +2,11 @@
   seo [
     { property: 'description', content: "#{@resource.name}. #{@resource.summary}" },
     { property: 'og:title', content: @resource.name, type: 'property' },
-    { property: 'og:image', content: image_url('logos/logo-square-holoteca.png'), type: 'property' },
-    { property: 'og:description', content: @resource.summary, type: 'property' }
+    { property: 'og:image', content: image_url('logos/symbol-holoteca.png'), type: 'property' },
+    { property: 'og:description', content: @resource.summary, type: 'property' },
+    { property: 'twitter:title', content: @resource.name },
+    { property: 'twitter:description', content: @resource.summary },
+    { property: 'twitter:image:src', content: image_url('logos/symbol-holoteca.png') }
   ]
   title "#{@resource.name} / Holoteca"
 %>

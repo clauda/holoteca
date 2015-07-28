@@ -48,4 +48,12 @@ class User
     self.role == 'admin'
   end
 
+  def twitter_username
+    if self.twitter
+      "@#{self.twitter.split('/').last}"
+    else
+      "@holoteca"
+    end
+  end
+
 end
