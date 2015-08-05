@@ -1,7 +1,7 @@
-  <ul id="mainmenu">
-    <li class="menu-item">
-      <%= link_to 'Início', root_path, class: 'parent', 'data-no-turbolink' => true %>
-    </li>
+<ul id="mainmenu">
+  <li class="menu-item">
+    <%= link_to 'Início', root_path, class: 'parent', 'data-no-turbolink' => true %>
+  </li>
 
   <% cache('top_menu', skip_digest: true) do %>
     <% @categories.each do |category| %>

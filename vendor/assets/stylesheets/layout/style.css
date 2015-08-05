@@ -212,7 +212,11 @@ dt {
 body.custom-background.stretched {
 	background: none;
 }
-#top { background-color: #C51010; text-align: center; }
+#top { 
+	background-color: #C51010; 
+	text-align: center; 
+	transition: all 0.5s ease;
+}
 #top .logo { margin: 20px; }
 #site-title {
 	font-size: 36px;

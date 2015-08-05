@@ -1,0 +1,16 @@
+<div id="fixed_bar" class="newsletter hidden-xs" style="display:none">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 middle">
+        <%= form_tag(subscribe_path, method: :post, remote: true, class: 'is-subscription') do %>
+          <h4 class="col-md-6">INSCREVA-SE PARA RECEBER AS NOVIDADES HOLOTECA</h4>
+          <div class="col-md-6">
+            <%= email_field_tag :email, nil, placeholder: 'seu@email.com.br', class: 'form-control subscribe', required: true %>
+            <%= button_tag 'ASSINE', class: 'btn btn-danger' %>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to image_tag('close.png', alt: 'Fechar', class: 'is-close', size: '24x24'), '#' %>
+    </div>
+  </div>
+</div>

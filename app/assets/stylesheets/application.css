@@ -17,6 +17,7 @@
  *= require layout/style
  *= require layout/color
  *= require components/subscribe
+ *= require components/fixed_bar
  */
 
 #mainnav.fix { 

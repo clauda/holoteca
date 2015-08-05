@@ -12,9 +12,25 @@
 
 $(function(){
 
-  $("#is-subscription").on('submit', function(){
+  var _close = function(){
+    $('#fixed_bar').slideUp('fast');
+    $('#top').css('marginTop', '0');
+  }
+
+  $(".is-subscription").on('submit', function(){
     $('#is-subscription button').text("ASSINADO").attr('disabled', 'disabled');
+    setTimeout(function(){ _close() }, 2000); 
   });
+
+  setTimeout(function(){
+    $('#fixed_bar').slideDown('fast');
+    $('#top').css('marginTop', '62px');
+  }, 10000);
+
+  $('.is-close').on('click', function(e){
+    e.preventDefault();
+    _close();
+  })
 
   // Fix menu on top
   // $(document).on("scroll", function() {
