@@ -16,8 +16,12 @@
  *= require layout/prettyPhoto
  *= require layout/style
  *= require layout/color
+ *= require layout/remodal
+ *= require layout/remodal-default-theme
+ *
  *= require components/subscribe
  *= require components/fixed_bar
+ *= require components/remodal
  */
 
 #mainnav.fix { 
