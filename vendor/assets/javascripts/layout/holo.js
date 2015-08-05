@@ -1,6 +1,12 @@
 
+'use strict';
+
+var Holo = Holo || {};
+
+Holo.Dispatcher = {};
+_.extend(Holo.Dispatcher, Backbone.Events);
+
 (function ($) {
-  "use strict";
 
   $(function() {
 
@@ -36,30 +42,5 @@
 			directionNav: true
 		});
 	}
-
-	// fecha barra de newsletter
-  var _close = function(){
-    $('#fixed_bar').slideUp('fast');
-    $('#top').css('marginTop', '0');
-  }
-
-  $(".is-subscription").on('submit', function(){
-    $('#is-subscription button').text("ASSINADO").attr('disabled', 'disabled');
-    setTimeout(function(){ _close() }, 2000);
-  });
-
-  setTimeout(function(){
-    $('#fixed_bar').slideDown('fast');
-    $('#top').css('marginTop', '62px');
-  }, 20000);
-
-  $('.is-close').on('click', function(e){
-    e.preventDefault();
-    _close();
-  });
-
-  // Modal
-  var _modernpopup = $('[data-remodal-id=modal-social]').remodal();
-  setTimeout(function(){ _modernpopup.open() }, 120000); // 2 minutes
 
 })(jQuery);
