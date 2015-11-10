@@ -490,7 +490,7 @@ ul.featured li { margin-bottom: 14px }
 	font-weight: 300;
 }
 .single header .entry-image { max-height: 420px; overflow: hidden; vertical-align: middle; }
-.single header .entry-image img { height: auto; vertical-align: middle; margin-top: -10px; }
+.single header .entry-image img { height: auto; vertical-align: middle; margin-top: -10px; width: 100%; }
 .single header .entry-image,
 .page header .entry-image {
 	margin-bottom: 20px;

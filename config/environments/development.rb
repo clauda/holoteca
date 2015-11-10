@@ -14,12 +14,14 @@ Holoteca::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = false
   # config.action_dispatch.rack_cache = true
   
   # Caching disabled by default
   config.action_controller.perform_caching = false
   config.cache_store = :memory_store
+  # config.cache_store = :redis_store, 'redis://localhost:6379/0/hololololo', { expires_in: 60.minutes }
+  # config.static_cache_control = 'public, max-age=2592000'
+  # config.action_dispatch.rack_cache = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
