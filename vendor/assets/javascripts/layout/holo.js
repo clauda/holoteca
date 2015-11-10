@@ -1,4 +1,3 @@
-
 'use strict';
 
 var Holo = Holo || {};
@@ -23,12 +22,12 @@ _.extend(Holo.Dispatcher, Backbone.Events);
 		/**
 		 * add select menu for mainmenu
 		 */
-		if ($.fn.mobileMenu) {
-			$('#mainmenu').mobileMenu({
-				defaultText: 'Navegue por aqui',
-				className: 'mainmenu'
-			});
-		}
+		// if ($.fn.mobileMenu) {
+		// 	$('#mainmenu').mobileMenu({
+		// 		defaultText: 'Navegue por aqui',
+		// 		className: 'mainmenu'
+		// 	});
+		// }
 	});
 
 	/**

@@ -6,7 +6,7 @@
   <% cache('top_menu', skip_digest: true) do %>
     <% @categories.each do |category| %>
       <li class="menu-item">
-        <%= link_to category.name, category_path(category) %>
+        <%= link_to category.name, category_path(category), title: category.name %>
       </li>
     <% end %>
   <% end %>

@@ -16,15 +16,27 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-4 col-sm-3 col-xs-6">
           <ul class='links'>
             <li><%= link_to 'Início', root_path, title: 'Página Inicial do Holoteca' %></li>
             <li><%= link_to 'Política de Privacidade', privacy_path, title: 'Política de Privacidade' %></li>
             <li><%= link_to 'Contato', contact_path, title: 'Anuncie ou Fale Conosco' %></li>
           </ul>
         </div>
+          
+        <% cache('bottom_menu', skip_digest: true) do %>
+          <div class="col-xs-6 visible-xs">
+            <ul class='links'>
+              <% @categories.each do |category| %>
+                <li class="menu-item">
+                  <%= link_to category.name, category_path(category), title: category.name %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-sm-3 col-xs-12 clearfix">
           <h4><b>Receba as novidades do Holoteca</b></h4>
           <%= form_tag(subscribe_path, method: :post, remote: true, class: 'is-subscription') do %>
             <div class="input-group">

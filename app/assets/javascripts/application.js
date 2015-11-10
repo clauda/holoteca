@@ -5,7 +5,6 @@
 //= require layout/backbone-min
 //= require layout/jquery.easing.1.3
 //= require layout/jquery.flexslider-min
-//= require layout/jquery.mobilemenu
 //= require layout/retina-1.1.0.min
 //= require layout/moment-with-langs.min
 //= require layout/remodal
@@ -15,6 +14,15 @@
 //= require views/tracker
 //= require views/modal
 //
+
+var isMobile = { 
+  Android: function() { return navigator.userAgent.match(/Android/i); }, 
+  BlackBerry: function() { return navigator.userAgent.match(/BlackBerry/i); }, 
+  iOS: function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, 
+  Opera: function() { return navigator.userAgent.match(/Opera Mini/i); }, 
+  Windows: function() { return navigator.userAgent.match(/IEMobile/i); }, 
+  any: function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } 
+};
 
 var tracker = new Holo.Tracker();
 

@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require font-faces
- *= require layout/bootstrap.min
+ *= require layout/bootstrap
  *= require admin/font-awesome
  *= require layout/flexslider
  *= require layout/prettyPhoto
@@ -33,10 +33,22 @@
 
 #mainnav.fix a { color: #fff; }
 
-.no-gutter { padding: 0 !important; }
+.no-gutter { padding: 0; }
+
+@media (max-width: 479px) {
+  #top { margin-top: 0 !important }
+  main { margin-top: 0 !important; }
+  .featured { padding: 0 !important; }
+  .featured img { 
+    min-height: 240px !important;
+    max-height: 240px !important;
+    height: 240px !important;
+  }
+  #footer-area ul.links { margin: 0 0 30px !important; padding: 0; }
+}
 
 @media (max-width: 991px) {
   .no-gutter {
-    padding: 0 20px
+    padding: 0 15px
   }
 }

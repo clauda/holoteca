@@ -243,7 +243,7 @@ main {
 #footer-area {
 	margin-top: 40px;
 }
-#footer-area ul.links { list-style: none; margin-top: 78px; }
+#footer-area ul.links { list-style: none; margin-top: 50px; }
 #footer-area a { color: white; }
 
 #footer-widget {
@@ -1711,9 +1711,9 @@ input[type="submit"],
 -----------------------------------*/
 
 @media (max-width: 479px) {
-	[class*="col-"] {
+	/*[class*="col-"] {
 		width: 100%;
-	}
+	}*/
 	.block-1 .block-side,
 	.blog-small .entry-image {
 		float: none;
@@ -1793,20 +1793,20 @@ input[type="submit"],
 
 /* lg */
 @media (min-width: 1200px) {
-	.container {
-		/*max-width: 1080px;
+	/*.container {
+		max-width: 1080px;
 		padding-left: 20px;
-		padding-right: 20px;*/
+		padding-right: 20px;
 	}
 	.row,
 	.row .row {
 		margin-right: -20px;
 		margin-left: -20px;
-	}
-	[class*="col-"] {
+	}*/
+	/*[class*="col-"] {
 		padding-left: 20px;
 		padding-right: 20px;
-	}
+	}*/
 	.boxed #wrapper {
 		width: 1170px;
 	}
