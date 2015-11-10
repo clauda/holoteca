@@ -6,7 +6,7 @@
       <% if article.category %><%= link_to article.category.name, category_path(article.category), title: article.category.name %><% end %>
     </div>
     <%= link_to article_path(article), title: article.title do %>
-      <%= image_tag cover(article.cover_url), size: '200x130', alt: article.title %>
+      <%= image_tag cover(article.cover_url), alt: article.title, class: 'img-responsive' %>
       <div class="overlay"><i class="fa fa-plus-circle"></i></div>
     <% end %>
   </div>

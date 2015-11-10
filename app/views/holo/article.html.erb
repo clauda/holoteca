@@ -17,7 +17,7 @@
   <header class="entry-header">
     <% unless @resource.cover_url.nil? || @resource.cover_url.blank? %>
       <div class="entry-image">
-        <%= image_tag @resource.cover_url, alt: @resource.title %>
+        <%= image_tag @resource.cover_url, alt: @resource.title, class: "img-responsive" %>
       </div>
     <% end %>
 

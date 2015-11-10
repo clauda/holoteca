@@ -425,6 +425,11 @@ ul.featured li { margin-bottom: 14px }
 	padding: 4px 7px;
 	font-size: 13px;
 }
+.flexslider img {
+	height: 360px;
+	max-height: 360px;
+	min-height: 360px;
+}
 .row.featured .post:first-child header,
 .flexslider header {
 	padding: 20px 20px 10px;
@@ -484,8 +489,8 @@ ul.featured li { margin-bottom: 14px }
 	line-height: 1.2;
 	font-weight: 300;
 }
-.single header .entry-image { height: 320px; overflow: hidden; vertical-align: middle; }
-.single header .entry-image img { width: 720px; height: auto; vertical-align: middle; margin-top: -10px; }
+.single header .entry-image { max-height: 420px; overflow: hidden; vertical-align: middle; }
+.single header .entry-image img { height: auto; vertical-align: middle; margin-top: -10px; }
 .single header .entry-image,
 .page header .entry-image {
 	margin-bottom: 20px;
@@ -748,7 +753,8 @@ ul.featured li { margin-bottom: 14px }
 .posts .entry-image {
 	border-bottom: 5px solid #eee;
 	transition: all 1s ease 0s;
-	height: 190px;
+	/*height: 190px;*/
+	max-height: 300px;
 	overflow: hidden;
 }
 .block-top:hover,
@@ -756,7 +762,7 @@ ul.featured li { margin-bottom: 14px }
 .posts .entry-image:hover {
 	border-color: #e74c3c;
 }
-.blog-small .entry-image { height: 130px; width: 200px; }
+.blog-small .entry-image { width: 240px; }
 
 .entry-image .entry-category {
 	position: absolute;
@@ -955,7 +961,7 @@ h4.block-heading {
 .page .posts .entry-image {
 	margin-top: 0;
 }
-.posts article {
+.blog-masonry article {
 	margin-bottom: 30px;
 	max-height: 300px;
 }
@@ -1788,9 +1794,9 @@ input[type="submit"],
 /* lg */
 @media (min-width: 1200px) {
 	.container {
-		max-width: 1080px;
+		/*max-width: 1080px;
 		padding-left: 20px;
-		padding-right: 20px;
+		padding-right: 20px;*/
 	}
 	.row,
 	.row .row {

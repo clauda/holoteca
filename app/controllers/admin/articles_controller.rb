@@ -24,6 +24,11 @@ class Admin::ArticlesController < InheritedResources::Base
     update!
   end
 
+  def destroy
+    resource.update(published: false)
+    redirect_to :back, notice: 'Não é possível remover! Artigo despublicado.'
+  end
+
   protected
 
     def permitted_params

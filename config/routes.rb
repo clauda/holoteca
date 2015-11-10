@@ -1,5 +1,5 @@
 Holoteca::Application.routes.draw do
-  match "/404" => "errors#error_404", via: [ :get, :post, :patch, :delete ], as: :error_404
+  get '/não-encontramos',  to: "errors#error_404", as: :error_404
 
   scope '/admin' do
     devise_for :users,

@@ -1,14 +1,16 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  self.responder = ApplicationResponder
-  respond_to :html
+  # self.responder = ApplicationResponder
+  # respond_to :html
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  rescue_from ActionController::RoutingError, with: :oh_not_found
 
+  # rescue_from ActionController::RoutingError, with: :oh_not_found
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :oh_not_found
+  
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
@@ -36,7 +38,7 @@ class ApplicationController < ActionController::Base
   private
 
     def oh_not_found
-      redirect_to(error_404_path) and return
+      redirect_to error_404_path and return
     end
 
 end
