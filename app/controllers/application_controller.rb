@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   private
 
     def oh_not_found
-      redirect_to error_404_path and return
+      redirect_to(error_404_path) and return
     end
 
 end

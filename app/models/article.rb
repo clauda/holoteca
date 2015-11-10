@@ -36,7 +36,7 @@ class Article
   scope :related, ->(keys, id){ visible.nin(_id: id).in(keywords: keys).limit(3).cache }
 
   before_save :publish
-  before_save :to_keys
+  after_save :to_keys
 
   def publish
     self.published_at = Time.now if self.published_changed?
