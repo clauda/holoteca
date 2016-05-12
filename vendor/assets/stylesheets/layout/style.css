@@ -960,6 +960,7 @@ h4.block-heading {
 
 .page .posts .entry-image {
 	margin-top: 0;
+	max-height: 190px;
 }
 .blog-masonry article {
 	margin-bottom: 30px;
